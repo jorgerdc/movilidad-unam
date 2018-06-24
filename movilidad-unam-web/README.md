@@ -10,9 +10,8 @@
 	* Instalar Git en la máquina donde se va a desarrollar ( en caso de no estar instalado).  En Ubuntu se puede instalar git fácilmente ejecutando  ```sudo apt-get install git``` 
 	* Cambiarse a un directorio en el que se hará la descarga del proyecto.
 	* Clonar el proyecto:
-``` bash
-git clone  
-```
+```bash d 
+
 	* Importar el proyecto desde la IDE:  ``` File -> Import ```
    Seleccionar  ```Existing projects into Workspace```
 	* Verificar que no existan problemas de compilación.
@@ -36,6 +35,7 @@ git clone
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxNjcxMDE2NCwxMzc3MDA5MTk4LDk3MD
-A3ODM1MSwyMjUwOTU3OTUsMTMwNTI4NDQ1XX0=
+eyJoaXN0b3J5IjpbLTEwNzY3MzI2NjMsMTIxNjcxMDE2NCwxMz
+c3MDA5MTk4LDk3MDA3ODM1MSwyMjUwOTU3OTUsMTMwNTI4NDQ1
+XX0=
 -->
