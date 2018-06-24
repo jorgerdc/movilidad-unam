@@ -1,18 +1,14 @@
 ## movilidad-unam-web
 
-Lineamientos de programación recomendados.
+1. Lineamientos de programación recomendados.
 
 * Descargar el documento de lineamientos generales de programación del siguiente
   [enlace](https://drive.google.com/open?id=1mkrT1ZZFNAUtTvskoIefzD2eNjpiZPXG)
-
 * Existe ya un workspace configurado con todas las instrucciones de este
   documento.  El archivo se puede descargar [aquí](https://drive.google.com/open?id=1mdqOa7Brr0uU-txOTFyCVUUjlHVDTZPR)
+* Se recomienda emplear la IDE STS. Descargar [aquí](https://spring.io/tools/sts/all)
   
-* Se recomienda emplear la IDE STS. Descargar aquí
-  https://spring.io/tools/sts/all
-
-Pasos a seguir para construir y probar
-
+2. Pasos a seguir para construir y probar
 *  Importar el proyecto desde la IDE:  File -> Import
    Seleccionar  Existing projects into Workspace
 
@@ -43,5 +39,5 @@ revisar el siguiente demo:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTc0NzkzMzksMTMwNTI4NDQ1XX0=
+eyJoaXN0b3J5IjpbLTEzNjc1NzA2OTMsMTMwNTI4NDQ1XX0=
 -->
