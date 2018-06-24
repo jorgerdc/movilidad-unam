@@ -2,11 +2,11 @@
 
 Lineamientos de programación recomendados.
 
-* Descargar el documento de lineamientos generales de programación:
-  [enter link description here](https://drive.google.com/open?id=1mkrT1ZZFNAUtTvskoIefzD2eNjpiZPXG)
+* Descargar el documento de lineamientos generales de programación del siguiente
+  [enlace](https://drive.google.com/open?id=1mkrT1ZZFNAUtTvskoIefzD2eNjpiZPXG)
 
 * Existe ya un workspace configurado con todas las instrucciones de este
-  documento.  El archivo se puede descargar de la siguiente ruta:
+  documento.  El archivo se puede descargar aquí
   https://drive.google.com/open?id=1mdqOa7Brr0uU-txOTFyCVUUjlHVDTZPR
   
 * Se recomienda emplear la IDE STS.
@@ -44,5 +44,5 @@ revisar el siguiente demo:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwNTI4NDQ1XX0=
+eyJoaXN0b3J5IjpbLTExMDkwMDAwMDAsMTMwNTI4NDQ1XX0=
 -->
