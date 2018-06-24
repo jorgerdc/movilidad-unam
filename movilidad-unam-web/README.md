@@ -1,19 +1,15 @@
 ## movilidad-unam-web
-
-1. Lineamientos de programación recomendados.
-
+#### Lineamientos de programación recomendados.
 * Descargar el documento de lineamientos generales de programación del siguiente
   [enlace](https://drive.google.com/open?id=1mkrT1ZZFNAUtTvskoIefzD2eNjpiZPXG)
 * Existe ya un workspace configurado con todas las instrucciones de este
   documento.  El archivo se puede descargar [aquí](https://drive.google.com/open?id=1mdqOa7Brr0uU-txOTFyCVUUjlHVDTZPR)
 * Se recomienda emplear la IDE STS. Descargar [aquí](https://spring.io/tools/sts/all)
-  
-2. Pasos a seguir para construir y probar
+  #### Pasos a seguir para construir y probar
 *  Importar el proyecto desde la IDE:  ``` File -> Import ```
    Seleccionar  ```Existing projects into Workspace```
 * Verificar que no existan problemas de compilación.
-
-3. Para construir y ejecutar la aplicación web desde terminal:
+Para construir y ejecutar la aplicación web desde terminal:
 * Abrir una terminal y cambiarse al directorio donde se encuentra el proyecto.
 * Ejecutar  ```./gradlew build```
 * No es necesario instalar gradle en la máquina.
@@ -32,5 +28,6 @@
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI1MDk1Nzk1LDEzMDUyODQ0NV19
+eyJoaXN0b3J5IjpbLTUzODE5MTI2NSwyMjUwOTU3OTUsMTMwNT
+I4NDQ1XX0=
 -->
