@@ -8,7 +8,11 @@
   
 2. Pasos a seguir para construir y probar
 	* Instalar Git en la máquina donde se va a desarrollar ( en caso de no estar instalado).  En Ubuntu se puede instalar git fácilmente ejecutando  ```sudo apt-get install git``` 
-	* Cambiarse a un directorio 
+	* Cambiarse a un directorio en el que se hará la descarga del proyecto.
+	* Clonar el proyecto:
+``` bash
+git clone  
+```
 	* Importar el proyecto desde la IDE:  ``` File -> Import ```
    Seleccionar  ```Existing projects into Workspace```
 	* Verificar que no existan problemas de compilación.
@@ -32,6 +36,6 @@
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ1ODcwMTIsOTcwMDc4MzUxLDIyNTA5NT
-c5NSwxMzA1Mjg0NDVdfQ==
+eyJoaXN0b3J5IjpbMTM3NzAwOTE5OCw5NzAwNzgzNTEsMjI1MD
+k1Nzk1LDEzMDUyODQ0NV19
 -->
