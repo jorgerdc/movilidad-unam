@@ -7,7 +7,8 @@
 	* Se recomienda emplear la IDE STS. Descargar [aquí](https://spring.io/tools/sts/all)
   
 2. Pasos a seguir para construir y probar
-	*  Importar el proyecto desde la IDE:  ``` File -> Import ```
+	* Instalar Git en la máquina donde se va a desarrollar ( en caso de no estar instalado).  En ubuntu se puede instalar git 
+	* Importar el proyecto desde la IDE:  ``` File -> Import ```
    Seleccionar  ```Existing projects into Workspace```
 	* Verificar que no existan problemas de compilación.
 
@@ -30,6 +31,6 @@
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0MjA1NDgwOSw5NzAwNzgzNTEsMjI1MD
-k1Nzk1LDEzMDUyODQ0NV19
+eyJoaXN0b3J5IjpbLTE0OTkwNTQ0MTksOTcwMDc4MzUxLDIyNT
+A5NTc5NSwxMzA1Mjg0NDVdfQ==
 -->
