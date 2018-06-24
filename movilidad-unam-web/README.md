@@ -1,9 +1,9 @@
 ## movilidad-unam-web
 
-Lineamientos de programaci髇 recomendados.
+Lineamientos de programaci贸n recomendados.
 
-* Descargar el documento de lineamientos generales de programaci髇:
-  https://drive.google.com/open?id=1mkrT1ZZFNAUtTvskoIefzD2eNjpiZPXG
+* Descargar el documento de lineamientos generales de programaci贸n:
+  [enter link description here](https://drive.google.com/open?id=1mkrT1ZZFNAUtTvskoIefzD2eNjpiZPXG)
 
 * Existe ya un workspace configurado con todas las instrucciones de este
   documento.  El archivo se puede descargar de la siguiente ruta:
@@ -17,9 +17,9 @@ Pasos a seguir para construir y probar
 *  Importar el proyecto desde la IDE:  File -> Import
    Seleccionar  Existing projects into Workspace
 
-* Verificar que no existan problemas de compilaci髇.
+* Verificar que no existan problemas de compilaci贸n.
 
-Para construir y ejecutar la aplicaci髇 web desde terminal:
+Para construir y ejecutar la aplicaci贸n web desde terminal:
 
 * Abrir una terminal y cambiarse al directorio donde se encuentra el proyecto.
 
@@ -29,7 +29,7 @@ Para iniciar la app web:
 
 * Ejecutar   ./gradlew appRun
 
-* Abrir un navegador en la p醙ina que se indica en la salida de la t閞minal:
+* Abrir un navegador en la p谩gina que se indica en la salida de la t茅rminal:
   
   http://localhost:8080/movilidad-unam-web/
 
@@ -43,3 +43,6 @@ revisar el siguiente demo:
   
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTMwNTI4NDQ1XX0=
+-->
