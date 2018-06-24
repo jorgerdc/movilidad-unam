@@ -9,7 +9,10 @@
 2. Pasos a seguir para construir y probar
 	* Instalar Git en la máquina donde se va a desarrollar ( en caso de no estar instalado).  En Ubuntu se puede instalar git fácilmente ejecutando  ```sudo apt-get install git``` 
 	- Cambiarse a un directorio en el que se hará la descarga del proyecto.
-	- Clonar el proyecto:  ```git clone https://github.com/jorgerdc/movilidad-unam.git ```
+	- Clonar el proyecto: 
+	 ```bash
+	 git clone https://github.com/jorgerdc/movilidad-unam.git 
+	 ```
 	- Importar el proyecto desde la IDE:  ``` File -> Import ```
    - Seleccionar  ```Existing projects into Workspace```
 	- Verificar que no existan problemas de compilación.
@@ -33,7 +36,7 @@
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzM5ODk3OSwxMjE2NzEwMTY0LDEzNz
-cwMDkxOTgsOTcwMDc4MzUxLDIyNTA5NTc5NSwxMzA1Mjg0NDVd
-fQ==
+eyJoaXN0b3J5IjpbLTEwODkwNDAzMDcsMTIxNjcxMDE2NCwxMz
+c3MDA5MTk4LDk3MDA3ODM1MSwyMjUwOTU3OTUsMTMwNTI4NDQ1
+XX0=
 -->
