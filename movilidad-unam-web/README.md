@@ -9,16 +9,13 @@
 * Se recomienda emplear la IDE STS. Descargar [aquí](https://spring.io/tools/sts/all)
   
 2. Pasos a seguir para construir y probar
-*  Importar el proyecto desde la IDE:  File -> Import
-   Seleccionar  Existing projects into Workspace
-
+*  Importar el proyecto desde la IDE:  ``` File -> Import ```
+   Seleccionar  ```Existing projects into Workspace```
 * Verificar que no existan problemas de compilación.
 
-Para construir y ejecutar la aplicación web desde terminal:
-
+3. Para construir y ejecutar la aplicación web desde terminal:
 * Abrir una terminal y cambiarse al directorio donde se encuentra el proyecto.
-
-* Ejecutar  ./gradlew build
+* Ejecutar  `./gradlew build
 
 Para iniciar la app web:
 
@@ -39,5 +36,5 @@ revisar el siguiente demo:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjc1NzA2OTMsMTMwNTI4NDQ1XX0=
+eyJoaXN0b3J5IjpbMTY2ODMyMzAwMiwxMzA1Mjg0NDVdfQ==
 -->
