@@ -15,11 +15,12 @@
 
 3. Para construir y ejecutar la aplicación web desde terminal:
 * Abrir una terminal y cambiarse al directorio donde se encuentra el proyecto.
-* Ejecutar  `./gradlew build
+* Ejecutar  ```./gradlew build```
+* No es necesario instalar gradle en la máquina.
+* 
+4. Para iniciar la app web:
 
-Para iniciar la app web:
-
-* Ejecutar   ./gradlew appRun
+* Ejecutar   ```./gradlew appRun```
 
 * Abrir un navegador en la página que se indica en la salida de la términal:
   
@@ -36,5 +37,5 @@ revisar el siguiente demo:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2ODMyMzAwMiwxMzA1Mjg0NDVdfQ==
+eyJoaXN0b3J5IjpbLTM2NTEwNTM1NSwxMzA1Mjg0NDVdfQ==
 -->
