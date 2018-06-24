@@ -1,17 +1,19 @@
 ## movilidad-unam-web
-#### Lineamientos de programación recomendados.
-* Descargar el documento de lineamientos generales de programación del siguiente
+1. Lineamientos de programación recomendados.
+	* Descargar el documento de lineamientos generales de programación del siguiente
   [enlace](https://drive.google.com/open?id=1mkrT1ZZFNAUtTvskoIefzD2eNjpiZPXG)
-* Existe ya un workspace configurado con todas las instrucciones de este
+	* Existe ya un workspace configurado con todas las instrucciones de este
   documento.  El archivo se puede descargar [aquí](https://drive.google.com/open?id=1mdqOa7Brr0uU-txOTFyCVUUjlHVDTZPR)
-* Se recomienda emplear la IDE STS. Descargar [aquí](https://spring.io/tools/sts/all)
-  #### Pasos a seguir para construir y probar
-*  Importar el proyecto desde la IDE:  ``` File -> Import ```
+	* Se recomienda emplear la IDE STS. Descargar [aquí](https://spring.io/tools/sts/all)
+  
+2. Pasos a seguir para construir y probar
+	*  Importar el proyecto desde la IDE:  ``` File -> Import ```
    Seleccionar  ```Existing projects into Workspace```
-* Verificar que no existan problemas de compilación.
-Para construir y ejecutar la aplicación web desde terminal:
-* Abrir una terminal y cambiarse al directorio donde se encuentra el proyecto.
-* Ejecutar  ```./gradlew build```
+	* Verificar que no existan problemas de compilación.
+
+3. Para construir y ejecutar la aplicación web desde terminal:
+	* Abrir una terminal y cambiarse al directorio donde se encuentra el proyecto.
+	* Ejecutar  ```./gradlew build```
 * No es necesario instalar gradle en la máquina.
 
 4. Para iniciar la app web:
@@ -19,7 +21,7 @@ Para construir y ejecutar la aplicación web desde terminal:
 * Abrir un navegador en la página que se indica en la salida de la terminal:
   http://localhost:8080/movilidad-unam-web/
 
-5. Para comenzar con el desarrollo de la app Web empleando Spring Core, Spring MVC, revisar el siguiente [demo](https://github.com/jorgerdc/spring/tree/master/spring-jquery-web).
+5. Para comenzar con el desarrollo de la app Web empleando Spring Core, Spring MVC, revisar el siguiente [demo](https://github.com/jorgerdc/spring/tree/master/spring-jquery-web)
 
 
 
@@ -28,6 +30,6 @@ Para construir y ejecutar la aplicación web desde terminal:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzODE5MTI2NSwyMjUwOTU3OTUsMTMwNT
-I4NDQ1XX0=
+eyJoaXN0b3J5IjpbLTIwOTI5NzM5NTMsMjI1MDk1Nzk1LDEzMD
+UyODQ0NV19
 -->
