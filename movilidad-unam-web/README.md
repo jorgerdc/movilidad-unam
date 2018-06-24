@@ -6,10 +6,9 @@ Lineamientos de programación recomendados.
   [enlace](https://drive.google.com/open?id=1mkrT1ZZFNAUtTvskoIefzD2eNjpiZPXG)
 
 * Existe ya un workspace configurado con todas las instrucciones de este
-  documento.  El archivo se puede descargar aquí
-  https://drive.google.com/open?id=1mdqOa7Brr0uU-txOTFyCVUUjlHVDTZPR
+  documento.  El archivo se puede descargar [aquí](https://drive.google.com/open?id=1mdqOa7Brr0uU-txOTFyCVUUjlHVDTZPR)
   
-* Se recomienda emplear la IDE STS.
+* Se recomienda emplear la IDE STS. Descargar aquí
   https://spring.io/tools/sts/all
 
 Pasos a seguir para construir y probar
@@ -44,5 +43,5 @@ revisar el siguiente demo:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDkwMDAwMDAsMTMwNTI4NDQ1XX0=
+eyJoaXN0b3J5IjpbLTE4MTc0NzkzMzksMTMwNTI4NDQ1XX0=
 -->
