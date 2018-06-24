@@ -1,0 +1,10 @@
+.DS_store
+build/
+target/
+bin/
+.gradle/
+.dropbox
+Icon
+*~
+Thumbs.db
+Thumbs.db:encryptable
