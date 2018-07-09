@@ -1,2 +1,2 @@
 # movilidad-unam
-* Revisar los archivos README.md de cada proyecto para mayores detalles.
+* Revisar los archivos README.md de cada suboproyecto para mayores detalles.
