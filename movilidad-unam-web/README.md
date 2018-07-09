@@ -8,14 +8,14 @@
   
 2. Pasos a seguir para construir y probar
 	* Instalar Git en la máquina donde se va a desarrollar ( en caso de no estar instalado).  En Ubuntu se puede instalar git fácilmente ejecutando  ```sudo apt-get install git``` 
-	* Cambiarse a un directorio en el que se hará la descarga del proyecto.
-	* Clonar el proyecto:
-``` bash
-git clone  
-```
-	* Importar el proyecto desde la IDE:  ``` File -> Import ```
-   Seleccionar  ```Existing projects into Workspace```
-	* Verificar que no existan problemas de compilación.
+	- Cambiarse a un directorio en el que se hará la descarga del proyecto.
+	- Clonar el proyecto: 
+	 ```bash
+	 git clone https://github.com/jorgerdc/movilidad-unam.git 
+	 ```
+	- Importar el proyecto desde la IDE:  ``` File -> Import ```
+   - Seleccionar  ```Existing projects into Workspace```
+	- Verificar que no existan problemas de compilación.
 
 3. Para construir y ejecutar la aplicación web desde terminal:
 	* Abrir una terminal y cambiarse al directorio donde se encuentra el proyecto.
@@ -36,6 +36,8 @@ git clone
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3NzAwOTE5OCw5NzAwNzgzNTEsMjI1MD
-k1Nzk1LDEzMDUyODQ0NV19
+eyJoaXN0b3J5IjpbLTE4NjgzMDQwMTMsLTEwODkwNDAzMDcsLT
+E4NjgzMDQwMTMsLTEwODkwNDAzMDcsMTIxNjcxMDE2NCwxMzc3
+MDA5MTk4LDk3MDA3ODM1MSwyMjUwOTU3OTUsMTMwNTI4NDQ1XX
+0=
 -->
