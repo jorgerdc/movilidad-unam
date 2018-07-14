@@ -5,9 +5,8 @@
 <form>
 	<div class="row">
 		<div class="form-group col-md-12">
-			<label for="nombre">Nombre</label> <input
-				type="text" class="form-control" id="nombre"
-				placeholder="Nombre">
+			<label for="nombre">Nombre</label> <input type="text"
+				class="form-control" id="nombre" placeholder="Nombre">
 		</div>
 	</div>
 	<div id="map"></div>

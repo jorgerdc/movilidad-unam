@@ -5,14 +5,12 @@
 <form>
 	<div class="row">
 		<div class="form-group col-md-6">
-			<label for="nombre">Nombre</label> <input
-				type="text" class="form-control" id="nombre"
-				placeholder="Nombre">
+			<label for="nombre">Nombre</label> <input type="text"
+				class="form-control" id="nombre" placeholder="Nombre">
 		</div>
 		<div class="form-group col-md-6">
-			<label for="numPlaca">Número de placa</label> <input
-				type="text" class="form-control" id="numPlaca"
-				placeholder="Número de placa">
+			<label for="numPlaca">Número de placa</label> <input type="text"
+				class="form-control" id="numPlaca" placeholder="Número de placa">
 		</div>
 	</div>
 </form>

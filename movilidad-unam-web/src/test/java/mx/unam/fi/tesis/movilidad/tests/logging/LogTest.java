@@ -36,7 +36,7 @@ public class LogTest {
 	 * Logging test
 	 */
 	@Test
-	public void testLog() {
+	public static void testLog() {
 		log.debug("Testing Slf4j at {}", new Date());
 		assertNotNull("log4j.properties not found in root classpath for testing",
 			Thread.currentThread().getContextClassLoader().getResource("log4j.properties"));
