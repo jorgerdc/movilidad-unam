@@ -10,8 +10,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
-	<context:component-scan
-		base-package="mx.unam.fi.tesis.movilidad" />
+	<context:component-scan base-package="mx.unam.fi.tesis.movilidad" />
 
 	<mvc:view-controller path="/" view-name="index" />
 	<mvc:view-controller path="/pumabus" view-name="pumabus" />
@@ -66,15 +65,15 @@
 		<property name="basenames" value="custom-validator,validator" />
 	</bean>
 	
-	<beans profile="postgresql-server">
 		
-		<bean id="dataSource"
-	 	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<beans profile="postgresql-server">
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		 <property name="driverClassName" value="org.postgresql.Driver" />
 		 <property name="url" value="jdbc:postgresql://localhost:5432/tesis" />
 		 <property name="username" value="cristian" />
 		 <property name="password" value="cristian" />
 	 </bean>
 	</beans>
+	
 	
 </beans>
