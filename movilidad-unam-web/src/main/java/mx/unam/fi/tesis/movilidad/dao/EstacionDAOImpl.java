@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 /**
- * TODO Definición de las funciones para las estaciones y que obtendran información
+ * Definición de las funciones para las estaciones y que obtendran información
  * de la BD.
  */
 @Repository("estacionDAO")
@@ -14,7 +14,7 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
 	private static final Logger log = LoggerFactory.getLogger(EstacionDAOImpl.class);
 
 	@Override
-	public Integer listarEstaciones() {
+	public Integer obtenTotalEstaciones() {
 		log.debug("\nDAO");
 		// TODO Auto-generated method stub
 		int valor =

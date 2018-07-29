@@ -8,5 +8,5 @@ public interface EstacionService {
 	 * TODO [Add method documentation]
 	 * @return
 	 */
-	public Integer listarEstaciones();
+	public Integer obtenTotalEstaciones();
 }

@@ -37,7 +37,7 @@ public class EstacionController {
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
 	public String listar(ModelMap modelMapp) {
-		Integer a = new Integer(estacionService.listarEstaciones());
+		Integer a = new Integer(estacionService.obtenTotalEstaciones());
 		modelMapp.addAttribute("mensaje", a);
 
 		return "estacion/listar";

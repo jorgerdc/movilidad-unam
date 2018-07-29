@@ -6,7 +6,7 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 /**
- * TODO [Add class documentation]
+ * Clase general que permite la inicialización del JDBC
  */
 public abstract class GenericJdbcDAO extends JdbcDaoSupport {
 

@@ -19,10 +19,10 @@ public class EstacionServiceImpl implements EstacionService {
 	EstacionDAO estacionDao;
 
 	@Override
-	public Integer listarEstaciones() {
+	public Integer obtenTotalEstaciones() {
 		log.debug("\nImplementacion del servicio");
 		// TODO Auto-generated method stub
-		return estacionDao.listarEstaciones();
+		return estacionDao.obtenTotalEstaciones();
 	}
 
 }

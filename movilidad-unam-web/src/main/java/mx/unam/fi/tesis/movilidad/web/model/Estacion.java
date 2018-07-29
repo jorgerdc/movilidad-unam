@@ -9,7 +9,7 @@ public class Estacion implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Long estacion_id;
+	private Long estacionId;
 
 	private String nombre;
 
@@ -17,16 +17,16 @@ public class Estacion implements Serializable {
 	 * TODO [Add method documentation]
 	 * @return
 	 */
-	public Long getEstacion_id() {
-		return estacion_id;
+	public Long getEstacionId() {
+		return estacionId;
 	}
 
 	/**
 	 * TODO [Add method documentation]
 	 * @param estacion_id
 	 */
-	public void setEstacion_id(Long estacion_id) {
-		this.estacion_id = estacion_id;
+	public void setEstacionId(Long estacion_id) {
+		this.estacionId = estacion_id;
 	}
 
 	/**

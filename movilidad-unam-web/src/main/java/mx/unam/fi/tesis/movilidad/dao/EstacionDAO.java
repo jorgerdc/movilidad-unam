@@ -6,9 +6,9 @@ package mx.unam.fi.tesis.movilidad.dao;
 public interface EstacionDAO {
 
 	/**
-	 * TODO [Add method documentation]
+	 * Definición de las funciones para el módulo de las estaciones.
 	 * @return
 	 */
-	public Integer listarEstaciones();
+	Integer obtenTotalEstaciones();
 
 }
