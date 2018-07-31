@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <sitemesh>
 	<mapping path="/*" decorator="/WEB-INF/decorators/main.jsp" />
-	<mapping path="/async/*" exclue="true"/>
+	<mapping path="/async/*" exclude="true"/>
+	<mapping path="/estacion/*" exclude="true"/>
+	<mapping path="/pumabus/*" exclude="true"/>
+	<mapping path="/ruta/*" exclude="true"/>
+	<mapping path="/estacionamiento/*" exclude="true"/>
+	<mapping path="/usuario/*" exclude="true"/>
 </sitemesh>

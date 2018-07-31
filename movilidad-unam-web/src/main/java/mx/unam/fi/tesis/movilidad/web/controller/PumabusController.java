@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * TODO Clase que permite el manejo de los datos para las unidades del pumabus.
+ * Clase que permite el manejo de los datos para las unidades del pumabus.
  */
 @Controller
 @RequestMapping(value = "/pumabus/")
 public class PumabusController {
 
 	/**
-	 * TODO Método que permite agregar un autobús del pumabus.
+	 * Método que permite agregar un autobús del pumabus.
 	 * @return
 	 */
 	@RequestMapping(value = "agregar", method = RequestMethod.GET)
@@ -21,7 +21,7 @@ public class PumabusController {
 	}
 
 	/**
-	 * TODO Método que obtiene el listado de los autobuses para el pumabus.
+	 * Método que obtiene el listado de los autobuses para el pumabus.
 	 * @return
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)

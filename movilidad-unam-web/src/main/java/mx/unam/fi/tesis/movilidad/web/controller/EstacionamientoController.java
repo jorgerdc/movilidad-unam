@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * TODO Clase que permite el manejo de los datos para los estacionamientos.
+ * Clase que permite el manejo de los datos para los estacionamientos.
  */
 @Controller
 @RequestMapping(value = "/estacionamiento/")
 public class EstacionamientoController {
 
 	/**
-	 * TODO Método que permite agregar un estacionamiento.
+	 * Método que permite agregar un estacionamiento.
 	 * @return
 	 */
 	@RequestMapping(value = "agregar", method = RequestMethod.GET)
@@ -21,7 +21,7 @@ public class EstacionamientoController {
 	}
 
 	/**
-	 * TODO Método que obtiene el listado de los estacionamientos.
+	 * Método que obtiene el listado de los estacionamientos.
 	 * @return
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)

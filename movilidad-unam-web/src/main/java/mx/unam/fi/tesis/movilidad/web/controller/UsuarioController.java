@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * TODO Clase que permite el manejo de los datos para los usuarios.
+ * Clase que permite el manejo de los datos para los usuarios.
  */
 @Controller
 @RequestMapping(value = "/usuario/")
 public class UsuarioController {
 
 	/**
-	 * TODO Método que permite agregar un usuario
+	 * Método que permite agregar un usuario
 	 * @return
 	 */
 	@RequestMapping(value = "agregar", method = RequestMethod.GET)
@@ -21,7 +21,7 @@ public class UsuarioController {
 	}
 
 	/**
-	 * TODO Método que obtiene el listado de los usuarios.
+	 * Método que obtiene el listado de los usuarios.
 	 * @return
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
