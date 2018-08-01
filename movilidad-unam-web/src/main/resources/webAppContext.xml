@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
-	<context:component-scan base-package="mx.unam.fi.tesis.movilidad." />
+	<context:component-scan base-package="mx.unam.fi.tesis.movilidad" />
 
 	<mvc:view-controller path="/" view-name="index" />
 	<mvc:view-controller path="/pumabus" view-name="pumabus" />

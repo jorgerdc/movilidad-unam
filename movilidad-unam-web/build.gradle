@@ -21,7 +21,7 @@ dependencies {
 	compile "org.springframework:spring-context:$springVersion"
 	compile "org.springframework:spring-webmvc:$springVersion"
 	compile 'commons-validator:commons-validator:1.6'
-	compile group: "org.springframework", name: "spring-jdbc", version: "$springVersion"
+	compile "org.springframework:spring-jdbc:$springVersion"
 	compile 'javax.validation:validation-api:2.0.1.Final'
 	
 	compileOnly 'jstl:jstl:1.2'

@@ -29,7 +29,6 @@ public class RutaController {
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
 	public static String listar() {
-		log.debug("------------------------------------------");
 		return "ruta/listar";
 	}
 }
