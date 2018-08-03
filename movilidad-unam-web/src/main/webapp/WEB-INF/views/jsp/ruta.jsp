@@ -19,4 +19,4 @@
 	<jsp:param name="titulo" value="Agregar ruta" />
 </jsp:include>
 
-<script src="<c:url value ="/resources/js/ruta/main.js" />"></script>
+<script src="<c:url value ='/resources/js/ruta/main.js' />"></script>

@@ -22,4 +22,4 @@
 	<jsp:param name="titulo" value="Agregar estacion" />
 </jsp:include>
 
-<script src="<c:url value ="/resources/js/estacion/main.js" />"></script>
+<script src="<c:url value ='/resources/js/estacion/main.js' />"></script>

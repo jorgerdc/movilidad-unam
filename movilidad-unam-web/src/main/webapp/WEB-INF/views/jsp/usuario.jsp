@@ -19,4 +19,4 @@
 	<jsp:param name="titulo" value="Agregar usuario" />
 </jsp:include>
 
-<script src="<c:url value ="/resources/js/usuario/main.js" />"></script>
+<script src="<c:url value ='/resources/js/usuario/main.js' />"></script>

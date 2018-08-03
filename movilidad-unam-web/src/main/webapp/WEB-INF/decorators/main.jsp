@@ -17,15 +17,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				
 		<!-- REQUIRED JS SCRIPTS -->
 		<!-- jQuery 3 -->
-		<script src="<c:url value ="/resources/js/jquery.min.js" />"></script>
+		<script src="<c:url value ='/resources/js/jquery.min.js' />"></script>
 		<!-- Bootstrap 3.3.7 -->
-		<script src="<c:url value ="/resources/js/bootstrap.min.js" />"></script>
+		<script src="<c:url value ='/resources/js/bootstrap.min.js' />"></script>
 		<!-- AdminLTE App -->
-		<script src="<c:url value ="/resources/js/adminlte.min.js" />"></script>
+		<script src="<c:url value ='/resources/js/adminlte.min.js' />"></script>
 		<!-- Font awesome -->
-		<script src="<c:url value ="/resources/js/fontawesome.js" />"></script>
+		<script src="<c:url value ='/resources/js/fontawesome.js' />"></script>
 		<!-- Movilidad -->
-		<script src="<c:url value ="/resources/js/movilidad.js" />"></script>
+		<script src="<c:url value ='/resources/js/movilidad.js' />"></script>
 		<!-- Google maps API -->
 		<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWfXD_inEXDTC0XTNMPfYUNxoUV13vPm0&libraries=drawing">

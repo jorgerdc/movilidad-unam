@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!-- Modal -->
-<div class="modal fade" id="<c:out value="${param.id}"/>" role="dialog">
+<div class="modal fade" id="<c:out value='${param.id}'/>" role="dialog">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -14,7 +14,7 @@
 			</div>
 			<div class="modal-body"></div>
 			<div class="modal-footer centrar-texto">
-				<button type="button" class="btn btn-primary">Guardar</button>
+				<button type="button" class="btn btn-primary" id="modalEnviar">Guardar</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 			</div>
 		</div>
