@@ -2,31 +2,47 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
 	<context:component-scan base-package="mx.unam.fi.tesis.movilidad" />
 
-	<mvc:view-controller path="/" view-name="index"/>
-	
-	<mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" cache-period="5"/>
-	
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
-	
-	<!-- Handler adapter for Annotated Controller classes , custom property editor  -->
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-	<property name="webBindingInitializer" ref="customWebBindingInitializer" />
+	<mvc:view-controller path="/" view-name="index" />
+	<mvc:view-controller path="/pumabus" view-name="pumabus" />
+	<mvc:view-controller path="/ruta" view-name="ruta" />
+	<mvc:view-controller path="/estacionamiento" view-name="estacionamiento" />
+	<mvc:view-controller path="/usuario" view-name="usuario" />
+
+	<mvc:resources mapping="/resources/**"
+		location="/WEB-INF/resources/" cache-period="5" />
+
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+
+	<!-- Handler adapter for Annotated Controller classes , custom property 
+		editor -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="webBindingInitializer"
+			ref="customWebBindingInitializer" />
 		<property name="messageConverters">
 			<list>
-				<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
-				<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
-				<bean class="org.springframework.http.converter.FormHttpMessageConverter" />
-				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.FormHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
 				<!-- Enable JSON without using mvc:annotation-driven -->
-				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 			</list>
 		</property>
 	</bean>
@@ -36,14 +52,34 @@
 		<property name="prefix" value="/WEB-INF/views/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
-	<!-- Bean uses to customize format dates, see class for details. -->
-	<bean class="mx.unam.fi.tesis.movilidad.web.binding.CustomBindingInitializer" id="customWebBindingInitializer" />
 
-	<!-- this bean includes validation messages. It can be found at classpath root directory
-	     (custom-validator.properties) -->
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	<!-- Bean uses to customize format dates, see class for details. -->
+	<bean
+		class="mx.unam.fi.tesis.movilidad.web.binding.CustomBindingInitializer"
+		id="customWebBindingInitializer" />
+
+	<!-- this bean includes validation messages. It can be found at classpath 
+		root directory (custom-validator.properties) -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basenames" value="custom-validator,validator" />
 	</bean>
-
+	
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<beans profile="postgresql-server">
+	
+		<context:property-placeholder location="classpath:/databases/postgresql/postgresql.properties" />
+		
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		 <property name="driverClassName" value="${postgresql.driver.class.name}" />
+		 <property name="url" value="${postgresql.url}" />
+		 <property name="username" value="${postgresql.username}" />
+		 <property name="password" value="${postgresql.password}" />
+	 </bean>
+	</beans>
+	
 </beans>
