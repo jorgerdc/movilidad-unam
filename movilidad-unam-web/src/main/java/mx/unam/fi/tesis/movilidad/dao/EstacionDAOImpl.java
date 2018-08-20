@@ -13,12 +13,14 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
 
 	private static final Logger log = LoggerFactory.getLogger(EstacionDAOImpl.class);
 
+	private static final String get_count_estacion_sql = "SELECT count(*) FROM estacion";
+
 	@Override
-	public Integer obtenTotalEstaciones() {
-		// TODO Auto-generated method stub
-		int valor =
-			getJdbcTemplate().queryForObject("SELECT count(*) FROM estacion", Integer.class);
-		return valor;
+	public int obtenTotalEstaciones() {
+		// Auto-generated method stub
+		int numEstaciones =
+			getJdbcTemplate().queryForObject(get_count_estacion_sql, Integer.class);
+		return numEstaciones;
 	}
 
 }

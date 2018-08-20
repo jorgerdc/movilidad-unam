@@ -19,8 +19,8 @@ public class EstacionServiceImpl implements EstacionService {
 	private EstacionDAO estacionDao;
 
 	@Override
-	public Integer obtenTotalEstaciones() {
-		// TODO Auto-generated method stub
+	public int obtenTotalEstaciones() {
+
 		return estacionDao.obtenTotalEstaciones();
 	}
 

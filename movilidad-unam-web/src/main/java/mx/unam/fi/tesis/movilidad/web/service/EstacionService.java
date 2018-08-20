@@ -5,8 +5,8 @@ package mx.unam.fi.tesis.movilidad.web.service;
  */
 public interface EstacionService {
 	/**
-	 * TODO [Add method documentation]
+	 * Servicio para obtener el número total de estaciones registradas.
 	 * @return
 	 */
-	Integer obtenTotalEstaciones();
+	int obtenTotalEstaciones();
 }

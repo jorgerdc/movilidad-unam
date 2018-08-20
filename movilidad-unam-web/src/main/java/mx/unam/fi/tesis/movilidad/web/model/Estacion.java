@@ -3,7 +3,7 @@ package mx.unam.fi.tesis.movilidad.web.model;
 import java.io.Serializable;
 
 /**
- * TODO Modelo de la tabla estaciones.
+ * Modelo de la tabla estaciones.
  */
 public class Estacion implements Serializable {
 
@@ -14,7 +14,7 @@ public class Estacion implements Serializable {
 	private String nombre;
 
 	/**
-	 * TODO [Add method documentation]
+	 * Get para el atributo estacion_id
 	 * @return
 	 */
 	public Long getEstacionId() {
@@ -22,7 +22,7 @@ public class Estacion implements Serializable {
 	}
 
 	/**
-	 * TODO [Add method documentation]
+	 * Set para el atributo estacion_id
 	 * @param estacion_id
 	 */
 	public void setEstacionId(Long estacion_id) {
@@ -30,7 +30,7 @@ public class Estacion implements Serializable {
 	}
 
 	/**
-	 * TODO [Add method documentation]
+	 * Get para el atributo nombre.
 	 * @return
 	 */
 	public String getNombre() {
@@ -38,7 +38,7 @@ public class Estacion implements Serializable {
 	}
 
 	/**
-	 * TODO [Add method documentation]
+	 * Set para el atributo nombre.
 	 * @param nombre
 	 */
 	public void setNombre(String nombre) {

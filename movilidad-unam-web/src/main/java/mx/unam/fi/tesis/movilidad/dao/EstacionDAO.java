@@ -9,6 +9,6 @@ public interface EstacionDAO {
 	 * Definición de las funciones para el módulo de las estaciones.
 	 * @return
 	 */
-	Integer obtenTotalEstaciones();
+	int obtenTotalEstaciones();
 
 }
