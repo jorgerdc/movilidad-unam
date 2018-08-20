@@ -23,6 +23,8 @@ dependencies {
 	compile 'commons-validator:commons-validator:1.6'
 	compile "org.springframework:spring-jdbc:$springVersion"
 	compile 'javax.validation:validation-api:2.0.1.Final'
+	compile 'org.postgresql:postgresql:42.2.4'
+	
 	
 	compileOnly 'jstl:jstl:1.2'
 	runtime 'org.sitemesh:sitemesh:3.0.1'

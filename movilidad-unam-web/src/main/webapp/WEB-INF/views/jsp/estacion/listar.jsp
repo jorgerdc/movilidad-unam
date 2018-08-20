@@ -3,5 +3,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="alert alert-warning centrar-texto" role="alert">
-	No se cuentan con registros.
+	No se cuentan con registros.${mensaje}
 </div>

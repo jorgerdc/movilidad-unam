@@ -70,16 +70,15 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<beans profile="postgresql-server">
+
 	
-		<context:property-placeholder location="classpath:/databases/postgresql/postgresql.properties" />
+	<context:property-placeholder location="classpath:/databases/postgresql/postgresql.properties" />
 		
-		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		 <property name="driverClassName" value="${postgresql.driver.class.name}" />
 		 <property name="url" value="${postgresql.url}" />
 		 <property name="username" value="${postgresql.username}" />
 		 <property name="password" value="${postgresql.password}" />
 	 </bean>
-	</beans>
 	
 </beans>
