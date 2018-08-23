@@ -1,5 +1,7 @@
 package mx.unam.fi.tesis.movilidad.web.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -9,6 +11,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import mx.unam.fi.tesis.movilidad.web.model.Estacion;
 import mx.unam.fi.tesis.movilidad.web.service.EstacionService;
 
 /**
@@ -38,7 +41,9 @@ public class EstacionController {
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
 	public String listar(ModelMap modelMapp) {
 		Integer a = new Integer(estacionService.obtenTotalEstaciones());
+		List<Estacion> estaciones = estacionService.listadoEstaciones();
 		modelMapp.addAttribute("mensaje", a);
+		modelMapp.addAttribute("estaciones", estaciones);
 
 		return "estacion/listar";
 	}
