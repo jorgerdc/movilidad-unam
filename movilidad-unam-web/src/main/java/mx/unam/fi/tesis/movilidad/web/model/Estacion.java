@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class Estacion implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2518978574179493260L;
 
 	private Long estacionId;
 

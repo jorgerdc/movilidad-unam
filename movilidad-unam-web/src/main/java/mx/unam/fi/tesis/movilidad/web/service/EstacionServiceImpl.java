@@ -1,5 +1,7 @@
 package mx.unam.fi.tesis.movilidad.web.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import mx.unam.fi.tesis.movilidad.dao.EstacionDAO;
 import mx.unam.fi.tesis.movilidad.web.controller.EstacionController;
+import mx.unam.fi.tesis.movilidad.web.model.Estacion;
 
 /**
  * Declaracion de las funciones para el servicio de las estaciones.
@@ -22,6 +25,12 @@ public class EstacionServiceImpl implements EstacionService {
 	public int obtenTotalEstaciones() {
 
 		return estacionDao.obtenTotalEstaciones();
+	}
+
+	@Override
+	public List<Estacion> listadoEstaciones() {
+		List<Estacion> listado = estacionDao.getListado();
+		return listado;
 	}
 
 }
