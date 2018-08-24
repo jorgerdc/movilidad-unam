@@ -19,6 +19,6 @@ public interface EstacionDAO {
 	 * Se obtienen datos de las estaciones registradas.
 	 * @return
 	 */
-	public List<Estacion> getListado();
+	List<Estacion> getListado();
 
 }

@@ -39,7 +39,8 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
 				@Override
 				public Estacion mapRow(ResultSet rs, int rowNum) throws SQLException {
 					Estacion estacion = new Estacion();
-					estacion.setNombre(rs.getString("nombre"));
+					estacion.setNombre(rs.getString(1));
+					estacion.setEstacionId(rs.getLong(2));
 					return estacion;
 				}
 			});
