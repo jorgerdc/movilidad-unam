@@ -6,10 +6,11 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import mx.unam.fi.tesis.movilidad.web.model.Estacion;
 import mx.unam.fi.tesis.movilidad.web.service.EstacionService;
@@ -17,7 +18,7 @@ import mx.unam.fi.tesis.movilidad.web.service.EstacionService;
 /**
  * Clase que permite el manejo de los datos para las estaciones.
  */
-@Controller
+@RestController
 @RequestMapping("/estacion/")
 public class EstacionController {
 	private static final Logger log = LoggerFactory.getLogger(EstacionController.class);
@@ -30,8 +31,9 @@ public class EstacionController {
 	 * @return
 	 */
 	@RequestMapping(value = "agregar", method = RequestMethod.GET)
-	public String agregar() {
-		return "estacion/agregar";
+	public ModelAndView agregar() {
+		ModelAndView model = new ModelAndView("estacion/agregar");
+		return model;
 	}
 
 	/**
@@ -39,12 +41,25 @@ public class EstacionController {
 	 * @return
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
-	public String listar(ModelMap modelMapp) {
+	public ModelAndView listar() {
+		ModelAndView model = new ModelAndView("estacion/listar");
 		Integer totalEStaciones = new Integer(estacionService.obtenTotalEstaciones());
 		List<Estacion> estaciones = estacionService.listadoEstaciones();
-		modelMapp.addAttribute("totalEstaciones", totalEStaciones);
-		modelMapp.addAttribute("estaciones", estaciones);
+		model.addObject("totalEstaciones", totalEStaciones);
+		model.addObject("estaciones", estaciones);
 
-		return "estacion/listar";
+		return model;
+	}
+
+	/**
+	 * Método que guarda la estación.
+	 * @param estacion
+	 * @return
+	 */
+	@RequestMapping(value = "guardar", method = RequestMethod.POST)
+	public String guardar(@RequestBody Estacion estacion) {
+		estacionService.guardarEstacion(estacion);
+		return "{\"estado\":true,\"mensaje\":\"La estación se ha guardado correctamente.\"}";
+
 	}
 }

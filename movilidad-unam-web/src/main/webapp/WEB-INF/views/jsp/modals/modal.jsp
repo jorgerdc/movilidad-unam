@@ -14,7 +14,7 @@
 			</div>
 			<div class="modal-body"></div>
 			<div class="modal-footer centrar-texto">
-				<button type="button" class="btn btn-primary" id="modalEnviar">Guardar</button>
+				<button type="submit" class="btn btn-primary" id="modalEnviar">Guardar</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 			</div>
 		</div>

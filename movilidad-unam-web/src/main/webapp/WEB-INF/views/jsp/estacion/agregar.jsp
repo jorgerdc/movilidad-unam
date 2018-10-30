@@ -5,11 +5,11 @@
 <form id="formAgregarEstacion">
 	<div class="row">
 		<div class="form-group col-md-12">
-			<label for="nombre">Nombre de la estación</label> 
+			<label for="nombre" class="control-label" for="nombre">Nombre de la estación</label> 
 			<input type="text" class="form-control" name="nombre" id="nombreEstacion"
 				placeholder="Nombre">
 		</div>
-	</div>
+	</div> 
 	<div class="row">
 		<div class="form-group col-md-6">
 			<label for="latitud">Latitud</label> 

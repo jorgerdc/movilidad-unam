@@ -1,11 +1,21 @@
 /**
  * 
  */
+var marker;
 $( document ).ready(function() {
 	initMap();
 	$("#modalAgregarEstacion").on('show.bs.modal',function(){
 		$("#latitud").val();
 		$("#longitud").val();
+	});
+	
+    $("#modalAgregarEstacion #modalEnviar").on('click',function(){
+    	var coords = [];
+    	var nombre = $("#nombreEstacion").val();
+    	coords.push(marker.getPosition().lat());
+    	coords.push(marker.getPosition().lng());
+    	var datos = {"nombre":nombre,"geo":coords};
+    	guardar("/estacion/guardar",datos,"#modalAgregarEstacion","/estacion/listar","#estacion-listado");
 	});
 	
 });
@@ -23,7 +33,7 @@ function initMap() {
 	});
 
 	// Create a marker and set its position.
-	var marker = new google.maps.Marker({
+	marker = new google.maps.Marker({
 		map : map,
 		position : myLatLng,
 		draggable:true
@@ -35,6 +45,6 @@ function initMap() {
 		latitud = marker.getPosition().lat();
 		longitud = marker.getPosition().lng();
 		$("#latitud").val(latitud.toFixed(6));
-		$("#longitud").val(latitud.toFixed(6));
+		$("#longitud").val(longitud.toFixed(6));
 	});
 }

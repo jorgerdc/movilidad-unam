@@ -38,3 +38,34 @@ function listar(url,IdListado){
 		}
 	});
 }
+
+function guardar(url,datos,modal,urlListar,listado){	
+	$.ajax({
+		url:'/movilidad-unam-web'+url,
+		type:"POST",
+		contentType : "application/json",
+		data: JSON.stringify(datos),
+        dataType: "json",
+		success:function(data){
+			if(data.estado){
+				pnotify('Correcto!',data.mensaje,'success');
+				listar(urlListar,listado);
+				$(modal).modal("hide");
+				
+			}
+		},
+		error:function(jqXHR, textStatus, errorThrown){
+			console.log("Ajax mal ");
+			
+		}
+	});
+}
+
+function pnotify(titulo,mensaje,tipo){
+	PNotify.removeAll();
+	new PNotify({
+	    title: titulo,
+	    text: mensaje,
+	    type: tipo
+	});
+}

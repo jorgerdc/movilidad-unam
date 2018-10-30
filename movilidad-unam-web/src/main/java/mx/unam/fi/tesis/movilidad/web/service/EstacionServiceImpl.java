@@ -33,4 +33,11 @@ public class EstacionServiceImpl implements EstacionService {
 		return listado;
 	}
 
+	@Override
+	public void guardarEstacion(Estacion estacion) {
+		estacionDao.guardarEstacion(estacion);
+		return;
+
+	}
+
 }
