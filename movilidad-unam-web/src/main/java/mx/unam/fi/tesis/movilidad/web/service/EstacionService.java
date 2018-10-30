@@ -19,4 +19,6 @@ public interface EstacionService {
 	 * @return
 	 */
 	public List<Estacion> listadoEstaciones();
+
+	void guardarEstacion(Estacion estacion);
 }

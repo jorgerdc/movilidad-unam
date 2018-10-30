@@ -1,6 +1,9 @@
 apply plugin: 'java'
 
 repositories {
+	maven {
+        url 'http://download.osgeo.org/webdav/geotools/'
+    }
 	mavenCentral()
 	jcenter()
 }  
@@ -24,14 +27,24 @@ dependencies {
 	compile "org.springframework:spring-jdbc:$springVersion"
 	compile 'javax.validation:validation-api:2.0.1.Final'
 	compile 'org.postgresql:postgresql:42.2.4'
+	compile 'org.geotools:gt-main:19.2'
+	compile group: 'org.geotools', name: 'gt-geometry', version: '2.5.5'
+	compile group: 'net.postgis', name: 'postgis-jdbc', version: '2.1.7.2'	
+	compile group: 'org.geotools', name: 'gt-geojson', version: '18.0'
+	compile group: 'org.codehaus.jackson', name: 'jackson-jaxrs', version: '1.9.13'
+	
+
 	
 	
+
 	compileOnly 'jstl:jstl:1.2'
 	runtime 'org.sitemesh:sitemesh:3.0.1'
 	compile 'org.slf4j:slf4j-api:1.7.25'
 	runtime 'org.slf4j:slf4j-log4j12:1.7.25'
 	runtime 'com.fasterxml.jackson.core:jackson-core:2.9.3'
 	runtime 'com.fasterxml.jackson.core:jackson-databind:2.9.3'
+	
+	
 	
 	testCompile 'junit:junit:4.12'
 	
@@ -47,6 +60,9 @@ dependencies {
 
 buildscript {
 	repositories {
+	maven {
+        url 'http://download.osgeo.org/webdav/geotools/'
+    }
    	jcenter()
 	}
 	dependencies {

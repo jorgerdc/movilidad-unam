@@ -10,7 +10,7 @@ import mx.unam.fi.tesis.movilidad.web.model.Estacion;
 public interface EstacionDAO {
 
 	/**
-	 * Se obtiene el numero total de estaciones registradas.
+	 * Se obtiene el número total de estaciones registradas.
 	 * @return
 	 */
 	int obtenTotalEstaciones();
@@ -20,5 +20,11 @@ public interface EstacionDAO {
 	 * @return
 	 */
 	List<Estacion> getListado();
+
+	/**
+	 * Función para guardar una estación.
+	 * @param estacion
+	 */
+	void guardarEstacion(Estacion estacion);
 
 }

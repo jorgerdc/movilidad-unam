@@ -30,7 +30,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWfXD_inEXDTC0XTNMPfYUNxoUV13vPm0&libraries=drawing">
 		</script>
-
+		<!-- PNotify -->
+		<script src="<c:url value ='/resources/js/pnotify.custom.min.js' />"></script>
+		<script>PNotify.prototype.options.styling = "fontawesome";</script>	
+		
 
 		<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
 		<!-- Font Awesome -->
@@ -44,6 +47,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<link rel="stylesheet" href="<c:url value='/resources/css/movilidad.css'/>">
 		<!-- Google Font -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+		<!-- Estilos Pnotify-->
+		<link rel="stylesheet" href="<c:url value='/resources/css/pnotify.custom.min.css'/>">
 		
 		<!-- Optional header of center page -->
 		<sitemesh:write property='head' />
