@@ -6,11 +6,10 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import mx.unam.fi.tesis.movilidad.web.model.Estacion;
 import mx.unam.fi.tesis.movilidad.web.service.EstacionService;
@@ -18,10 +17,12 @@ import mx.unam.fi.tesis.movilidad.web.service.EstacionService;
 /**
  * Clase que permite el manejo de los datos para las estaciones.
  */
-@RestController
+@Controller
 @RequestMapping("/estacion/")
 public class EstacionController {
 	private static final Logger log = LoggerFactory.getLogger(EstacionController.class);
+	private static final String vista_estacion_agregar = "estacion/agregar";
+	private static final String vista_estacion_listar = "estacion/listar";
 
 	@Resource
 	private EstacionService estacionService;
@@ -31,9 +32,8 @@ public class EstacionController {
 	 * @return
 	 */
 	@RequestMapping(value = "agregar", method = RequestMethod.GET)
-	public ModelAndView agregar() {
-		ModelAndView model = new ModelAndView("estacion/agregar");
-		return model;
+	public String agregar(ModelMap map) {
+		return vista_estacion_agregar;
 	}
 
 	/**
@@ -41,25 +41,12 @@ public class EstacionController {
 	 * @return
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
-	public ModelAndView listar() {
-		ModelAndView model = new ModelAndView("estacion/listar");
+	public String listar(ModelMap map) {
 		Integer totalEStaciones = new Integer(estacionService.obtenTotalEstaciones());
 		List<Estacion> estaciones = estacionService.listadoEstaciones();
-		model.addObject("totalEstaciones", totalEStaciones);
-		model.addObject("estaciones", estaciones);
+		map.addAttribute("totalEstaciones", totalEStaciones);
+		map.addAttribute("estaciones", estaciones);
 
-		return model;
-	}
-
-	/**
-	 * Método que guarda la estación.
-	 * @param estacion
-	 * @return
-	 */
-	@RequestMapping(value = "guardar", method = RequestMethod.POST)
-	public String guardar(@RequestBody Estacion estacion) {
-		estacionService.guardarEstacion(estacion);
-		return "{\"estado\":true,\"mensaje\":\"La estación se ha guardado correctamente.\"}";
-
+		return vista_estacion_listar;
 	}
 }

@@ -24,7 +24,8 @@ public interface EstacionDAO {
 	/**
 	 * Función para guardar una estación.
 	 * @param estacion
+	 * @return
 	 */
-	void guardarEstacion(Estacion estacion);
+	int guardarEstacion(Estacion estacion);
 
 }

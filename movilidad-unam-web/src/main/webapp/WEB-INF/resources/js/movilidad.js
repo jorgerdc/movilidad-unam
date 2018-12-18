@@ -39,7 +39,7 @@ function listar(url,IdListado){
 	});
 }
 
-function guardar(url,datos,modal,urlListar,listado){	
+function guardar(url,datos,modal,urlListar,listado){
 	$.ajax({
 		url:'/movilidad-unam-web'+url,
 		type:"POST",
@@ -47,12 +47,11 @@ function guardar(url,datos,modal,urlListar,listado){
 		data: JSON.stringify(datos),
         dataType: "json",
 		success:function(data){
-			if(data.estado){
-				pnotify('Correcto!',data.mensaje,'success');
-				listar(urlListar,listado);
-				$(modal).modal("hide");
+			pnotify(data.titulo,data.mensaje,data.tipo);
+			listar(urlListar,listado);
+			$(modal).modal("hide");
 				
-			}
+			
 		},
 		error:function(jqXHR, textStatus, errorThrown){
 			console.log("Ajax mal ");

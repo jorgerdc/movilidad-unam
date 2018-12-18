@@ -34,9 +34,8 @@ public class EstacionServiceImpl implements EstacionService {
 	}
 
 	@Override
-	public void guardarEstacion(Estacion estacion) {
-		estacionDao.guardarEstacion(estacion);
-		return;
+	public int guardarEstacion(Estacion estacion) {
+		return estacionDao.guardarEstacion(estacion);
 
 	}
 
