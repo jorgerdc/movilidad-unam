@@ -28,10 +28,10 @@ dependencies {
 	compile 'javax.validation:validation-api:2.0.1.Final'
 	compile 'org.postgresql:postgresql:42.2.4'
 	compile 'org.geotools:gt-main:19.2'
-	compile group: 'org.geotools', name: 'gt-geometry', version: '2.5.5'
-	compile group: 'net.postgis', name: 'postgis-jdbc', version: '2.1.7.2'	
-	compile group: 'org.geotools', name: 'gt-geojson', version: '18.0'
-	compile group: 'org.codehaus.jackson', name: 'jackson-jaxrs', version: '1.9.13'
+	compile 'org.geotools:gt-geometry:2.5.5'
+	compile 'net.postgis:postgis-jdbc:2.1.7.2'	
+	compile 'org.geotools:gt-geojson:18.0'
+	compile 'org.codehaus.jackson:jackson-jaxrs:1.9.13'
 	
 
 	

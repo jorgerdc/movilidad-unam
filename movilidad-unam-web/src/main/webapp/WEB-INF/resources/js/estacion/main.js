@@ -3,4 +3,8 @@ $(document).ready(function(){
     $("#registrarEstacion").click(function(){
     	cargarModal("/estacion/agregar","#modalAgregarEstacion");
     });
+    
+    $("#modalAgregarEstacion").on("hide.bs.modal",function(){
+    	$("#modalAgregarEstacion #modalEnviar").off("click");
+    });
 });

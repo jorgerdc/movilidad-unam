@@ -15,7 +15,7 @@ $( document ).ready(function() {
     	coords.push(marker.getPosition().lat());
     	coords.push(marker.getPosition().lng());
     	var datos = {"nombre":nombre,"geo":coords};
-    	guardar("/estacion/guardar",datos,"#modalAgregarEstacion","/estacion/listar","#estacion-listado");
+    	guardar("/RestEstacion/guardar",datos,"#modalAgregarEstacion","/estacion/listar","#estacion-listado");
 	});
 	
 });

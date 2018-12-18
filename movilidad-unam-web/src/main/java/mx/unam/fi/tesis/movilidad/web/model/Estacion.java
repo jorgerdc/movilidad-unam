@@ -19,10 +19,6 @@ public class Estacion implements Serializable {
 	@JsonIgnore
 	private Point geo;
 
-	public Estacion() {
-		this.geo = new Point();
-	}
-
 	/**
 	 * Get para el atributo estacion_id
 	 * @return
@@ -69,6 +65,7 @@ public class Estacion implements Serializable {
 	 * @param x
 	 */
 	public void setGeo(double[] x) {
+		this.geo = new Point();
 		if (x.length == 2) {
 			this.geo.setX(x[0]);
 			this.geo.setY(x[1]);
