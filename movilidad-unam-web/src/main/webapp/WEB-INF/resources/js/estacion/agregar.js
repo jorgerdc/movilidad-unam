@@ -10,11 +10,8 @@ $( document ).ready(function() {
 	});
 	
     $("#modalAgregarEstacion #modalEnviar").on('click',function(){
-    	var coords = [];
     	var nombre = $("#nombreEstacion").val();
-    	coords.push(marker.getPosition().lat());
-    	coords.push(marker.getPosition().lng());
-    	var datos = {"nombre":nombre,"geo":coords};
+    	var datos = {"nombre":nombre,"x": marker.getPosition().lat(), "y":marker.getPosition().lng()};
     	guardar("/RestEstacion/guardar",datos,"#modalAgregarEstacion","/estacion/listar","#estacion-listado");
 	});
 	
