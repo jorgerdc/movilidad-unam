@@ -2,9 +2,6 @@ package mx.unam.fi.tesis.movilidad.web.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.postgis.Point;
-
 /**
  * Modelo de la tabla estaciones.
  */
@@ -16,8 +13,9 @@ public class Estacion implements Serializable {
 
 	private String nombre;
 
-	@JsonIgnore
-	private Point geo;
+	private double x;
+
+	private double y;
 
 	/**
 	 * Get para el atributo estacion_id
@@ -52,24 +50,35 @@ public class Estacion implements Serializable {
 	}
 
 	/**
-	 * get para la geometria.
+	 * get para la coordenada x del punto.
 	 * @return
 	 */
-	public double[] getGeo() {
-		return new double[] { geo.getX(), geo.getY() };
+	public double getX() {
+		return x;
 	}
 
 	/**
-	 * set para la geometria, se le indica que implementara la funcion setX(double) y
-	 * setY(double)
+	 * set para la coordenada x del punto.
 	 * @param x
 	 */
-	public void setGeo(double[] x) {
-		this.geo = new Point();
-		if (x.length == 2) {
-			this.geo.setX(x[0]);
-			this.geo.setY(x[1]);
-		}
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	/**
+	 * get para la coordenada y del punto.
+	 * @return
+	 */
+	public double getY() {
+		return y;
+	}
+
+	/**
+	 * set para la coordenada y de punto.
+	 * @param y
+	 */
+	public void setY(double y) {
+		this.y = y;
 	}
 
 }

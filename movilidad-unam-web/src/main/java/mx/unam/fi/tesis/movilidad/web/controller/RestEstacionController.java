@@ -29,7 +29,6 @@ public class RestEstacionController extends GenericController {
 		respuesta = generarMensaje("false", "Error!",
 			"Ha ocurrido un error al intentar realizar la acción. Vuelva a intentarlo",
 			"error");
-
 		if (guardado > 0) {
 			respuesta = generarMensaje("true", "Correcto!",
 				"La estación se ha guardado correctamente.", "success");
