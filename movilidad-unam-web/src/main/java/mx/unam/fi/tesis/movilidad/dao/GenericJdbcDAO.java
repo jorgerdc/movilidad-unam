@@ -17,15 +17,14 @@ public abstract class GenericJdbcDAO extends JdbcDaoSupport {
 	}
 
 	/**
-	 * Función que verifica que se realizo correctamente el insert
+	 * Función que verifica si se realizó correctamente la interaccion con la BD.
 	 * @param expected
 	 * @param actual
 	 */
-	protected final void verificarInsert(int expected, int actual) {
+	protected final void checkRowUpdated(int expected, int actual) {
 
 		if (expected != actual) {
-			throw new IncorrectResultSizeDataAccessException(
-				"Hubo un error al ejecutar la acción.", expected, actual);
+			throw new IncorrectResultSizeDataAccessException(expected, actual);
 		}
 		return;
 
