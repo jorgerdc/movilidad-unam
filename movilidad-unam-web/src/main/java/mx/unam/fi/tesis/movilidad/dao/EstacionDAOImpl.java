@@ -4,10 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.postgis.Point;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
@@ -53,19 +51,10 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
 
 	@Override
 	public int guardarEstacion(Estacion estacion) {
-		Point punto = new Point(estacion.getX(), estacion.getY());
 		int regActualizados = getJdbcTemplate().update(insert_estacion_sql,
-			estacion.getNombre(), punto.toString());
-		try {
-			verificarInsert(1, regActualizados);
-		} catch (IncorrectResultSizeDataAccessException ex) {
-			System.out.println("-------------------------");
-			System.out.println("Mensaje: " + ex.getMessage());
-			System.out.println("Valor esperado: " + ex.getExpectedSize());
-			System.out.println("Valor actual: " + ex.getActualSize());
-			System.out.println("-------------------------");
-		}
+			estacion.getNombre(), estacion.getGeo().toString());
 
+		checkRowUpdated(1, regActualizados);
 		return regActualizados;
 	}
 

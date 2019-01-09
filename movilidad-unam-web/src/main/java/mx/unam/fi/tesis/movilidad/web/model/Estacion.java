@@ -2,6 +2,8 @@ package mx.unam.fi.tesis.movilidad.web.model;
 
 import java.io.Serializable;
 
+import org.postgis.Point;
+
 /**
  * Modelo de la tabla estaciones.
  */
@@ -79,6 +81,15 @@ public class Estacion implements Serializable {
 	 */
 	public void setY(double y) {
 		this.y = y;
+	}
+
+	/**
+	 * Genera la geometria punto con los valores x,y
+	 * @return
+	 */
+	public Point getGeo() {
+		return new Point(this.x, this.y);
+
 	}
 
 }

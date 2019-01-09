@@ -2,6 +2,8 @@ package mx.unam.fi.tesis.movilidad.web.controller;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +16,8 @@ import mx.unam.fi.tesis.movilidad.web.service.EstacionService;
 @RestController
 @RequestMapping("/RestEstacion/")
 public class RestEstacionController extends GenericController {
+	private static final Logger log =
+		LoggerFactory.getLogger(RestEstacionController.class);
 	@Resource
 	private EstacionService estacionService;
 
@@ -24,15 +28,13 @@ public class RestEstacionController extends GenericController {
 	 */
 	@RequestMapping(value = "guardar", method = RequestMethod.POST)
 	public Mensaje guardar(@RequestBody Estacion estacion) {
+
 		int guardado = estacionService.guardarEstacion(estacion);
 		Mensaje respuesta;
-		respuesta = generarMensaje("false", "Error!",
-			"Ha ocurrido un error al intentar realizar la acción. Vuelva a intentarlo",
-			"error");
-		if (guardado > 0) {
-			respuesta = generarMensaje("true", "Correcto!",
-				"La estación se ha guardado correctamente.", "success");
-		}
+
+		respuesta = generarMensaje("true", "Correcto!",
+			"La estación se ha guardado correctamente.", "success");
+
 		return respuesta;
 
 	}

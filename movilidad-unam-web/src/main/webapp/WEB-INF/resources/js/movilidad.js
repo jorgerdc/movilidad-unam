@@ -54,7 +54,12 @@ function guardar(url,datos,modal,urlListar,listado){
 			
 		},
 		error:function(jqXHR, textStatus, errorThrown){
-			console.log("Ajax mal ");
+			console.log("Problema con el ajax al guardar la información.");
+			console.log(jqXHR);
+			console.log(textStatus);
+			pnotify("Error!","Ha ocurrido un error al intentar realizar la acci&oacute;n. Vuelva a intentarlo","error");
+			listar(urlListar,listado);
+			$(modal).modal("hide");
 			
 		}
 	});
