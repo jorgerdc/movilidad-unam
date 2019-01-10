@@ -20,5 +20,9 @@ public interface EstacionService {
 	 */
 	public List<Estacion> listadoEstaciones();
 
-	int guardarEstacion(Estacion estacion);
+	/**
+	 * Servicio para guardar una estacion
+	 * @param estacion
+	 */
+	void guardarEstacion(Estacion estacion);
 }
