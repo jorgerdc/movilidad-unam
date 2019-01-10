@@ -50,12 +50,11 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
 	}
 
 	@Override
-	public int guardarEstacion(Estacion estacion) {
+	public void guardarEstacion(Estacion estacion) {
 		int regActualizados = getJdbcTemplate().update(insert_estacion_sql,
 			estacion.getNombre(), estacion.getGeo().toString());
 
 		checkRowUpdated(1, regActualizados);
-		return regActualizados;
 	}
 
 }

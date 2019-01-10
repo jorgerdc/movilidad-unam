@@ -29,9 +29,8 @@ public class RestEstacionController extends GenericController {
 	@RequestMapping(value = "guardar", method = RequestMethod.POST)
 	public Mensaje guardar(@RequestBody Estacion estacion) {
 
-		int guardado = estacionService.guardarEstacion(estacion);
+		estacionService.guardarEstacion(estacion);
 		Mensaje respuesta;
-
 		respuesta = generarMensaje("true", "Correcto!",
 			"La estación se ha guardado correctamente.", "success");
 
