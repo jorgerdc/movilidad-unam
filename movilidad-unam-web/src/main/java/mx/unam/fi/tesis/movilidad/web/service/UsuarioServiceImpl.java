@@ -19,11 +19,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 	private UsuarioDAO usuarioDao;
 
 	@Override
-	public int obtenTotalUsuarios() {
-		return usuarioDao.obtenTotalUsuarios();
-	}
-
-	@Override
 	public List<Usuario> listadoUsuarios() {
 		List<Usuario> listado = usuarioDao.getListado();
 		return listado;

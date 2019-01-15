@@ -10,12 +10,6 @@ import mx.unam.fi.tesis.movilidad.web.model.Usuario;
 public interface UsuarioService {
 
 	/**
-	 * Servicio para obtener el total de usuarios registrados
-	 * @return
-	 */
-	int obtenTotalUsuarios();
-
-	/**
 	 * Servicio para obtener a los usuarios registrados
 	 * @return
 	 */

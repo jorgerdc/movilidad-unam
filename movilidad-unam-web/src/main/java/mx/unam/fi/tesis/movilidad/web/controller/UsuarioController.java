@@ -39,8 +39,8 @@ public class UsuarioController {
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
 	public String listar(ModelMap map) {
-		Integer totalUsuarios = new Integer(usuarioService.obtenTotalUsuarios());
 		List<Usuario> usuarios = usuarioService.listadoUsuarios();
+		int totalUsuarios = usuarios.size();
 		map.addAttribute("totalUsuarios", totalUsuarios);
 		map.addAttribute("usuarios", usuarios);
 		return vista_usuario_listar;
