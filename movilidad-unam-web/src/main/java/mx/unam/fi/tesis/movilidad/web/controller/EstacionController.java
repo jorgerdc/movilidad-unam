@@ -42,9 +42,9 @@ public class EstacionController {
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
 	public String listar(ModelMap map) {
-		Integer totalEStaciones = new Integer(estacionService.obtenTotalEstaciones());
 		List<Estacion> estaciones = estacionService.listadoEstaciones();
-		map.addAttribute("totalEstaciones", totalEStaciones);
+		int totalEstaciones = estaciones.size();
+		map.addAttribute("totalEstaciones", totalEstaciones);
 		map.addAttribute("estaciones", estaciones);
 
 		return vista_estacion_listar;

@@ -15,16 +15,8 @@ import mx.unam.fi.tesis.movilidad.web.model.Usuario;
  */
 @Repository("usuarioDAO")
 public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
-	private static final String get_count_usuario_sql = "SELECT count(*) from usuario";
 	private static final String get_listado_usuario_sql =
 		"SELECT usuario_id,usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo FROM usuario";
-
-	@Override
-	public int obtenTotalUsuarios() {
-		int numUsuarios =
-			getJdbcTemplate().queryForObject(get_count_usuario_sql, Integer.class);
-		return numUsuarios;
-	}
 
 	@Override
 	public List<Usuario> getListado() {

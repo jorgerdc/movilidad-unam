@@ -22,12 +22,6 @@ public class EstacionServiceImpl implements EstacionService {
 	private EstacionDAO estacionDao;
 
 	@Override
-	public int obtenTotalEstaciones() {
-
-		return estacionDao.obtenTotalEstaciones();
-	}
-
-	@Override
 	public List<Estacion> listadoEstaciones() {
 		List<Estacion> listado = estacionDao.getListado();
 		return listado;

@@ -10,12 +10,6 @@ import mx.unam.fi.tesis.movilidad.web.model.Usuario;
 public interface UsuarioDAO {
 
 	/**
-	 * Se obtiene el número total de usuarios.
-	 * @return
-	 */
-	int obtenTotalUsuarios();
-
-	/**
 	 * Se obtienen a los usuarios registrados.
 	 * @return
 	 */
