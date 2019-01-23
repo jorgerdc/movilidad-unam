@@ -13,5 +13,6 @@ public interface UsuarioDAO {
 	 * Se obtienen a los usuarios registrados.
 	 * @return
 	 */
-	List<Usuario> getListado();
+	List<Usuario> getListado(Usuario usuario);
+
 }

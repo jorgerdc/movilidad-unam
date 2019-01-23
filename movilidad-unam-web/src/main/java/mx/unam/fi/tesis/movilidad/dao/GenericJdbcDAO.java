@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 /**
@@ -11,9 +12,12 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
  */
 public abstract class GenericJdbcDAO extends JdbcDaoSupport {
 
+	protected NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+
 	@Resource(name = "dataSource")
 	private void setDS(DataSource ds) {
 		this.setDataSource(ds);
+		this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(ds);
 	}
 
 	/**

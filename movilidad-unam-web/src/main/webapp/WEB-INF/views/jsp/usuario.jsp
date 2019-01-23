@@ -6,12 +6,20 @@
 	<div class="page-header">
 		<h1>Usuarios.</h1>
 	</div>
-
 	<div class="row margin-bottom-15">
-		<button type="button" id="registrarUsuario"
-			class="btn btn-success alinear-derecha">Registrar usuario.</button>
+		<div class="col-md-12">
+			<button type="button" id="BuscarUsuario"
+				class="btn btn-md btn-primary alinear-izquierda"
+				onclick="mostrarCriterios('#criterios-usuario')">Búsqueda</button>
+
+			<button type="button" id="registrarUsuario"
+				class="btn btn-success alinear-derecha">Registrar usuario.</button>
+		</div>
 	</div>
-	<div id="usuario-listado"></div>
+
+	<jsp:include page="/WEB-INF/views/jsp/criterios/usuarios.jsp"></jsp:include>
+
+	<div class="margin-top-15" id="usuario-listado"></div>
 </div>
 
 <jsp:include page="/WEB-INF/views/jsp/modals/modal.jsp">

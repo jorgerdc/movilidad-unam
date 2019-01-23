@@ -38,11 +38,12 @@ public class UsuarioController {
 	 * @return
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
-	public String listar(ModelMap map) {
-		List<Usuario> usuarios = usuarioService.listadoUsuarios();
+	public String listar(ModelMap map, Usuario usuario) {
+		List<Usuario> usuarios = usuarioService.listadoUsuarios(usuario);
 		int totalUsuarios = usuarios.size();
 		map.addAttribute("totalUsuarios", totalUsuarios);
 		map.addAttribute("usuarios", usuarios);
 		return vista_usuario_listar;
 	}
+
 }
