@@ -13,5 +13,5 @@ public interface UsuarioService {
 	 * Servicio para obtener a los usuarios registrados
 	 * @return
 	 */
-	List<Usuario> listadoUsuarios();
+	List<Usuario> listadoUsuarios(Usuario usuario);
 }

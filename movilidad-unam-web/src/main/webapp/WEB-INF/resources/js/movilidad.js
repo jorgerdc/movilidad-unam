@@ -24,10 +24,11 @@ function cargarModal(url,IdModal){
 	
 }
 
-function listar(url,IdListado){
+function listar(url,IdListado,datos){
 	$.ajax({
 		type:'GET',
 		url:'/movilidad-unam-web'+url,
+		data:datos,
 		dataType:'html',
 		success:function(data){
 			var listado = $(IdListado);
@@ -73,3 +74,24 @@ function pnotify(titulo,mensaje,tipo){
 	    type: tipo
 	});
 }
+
+function mostrarCriterios(idContenedor){
+	$(idContenedor).stop().toggle('slow');
+}
+
+function getFormData(form){
+    var unindexed_array = form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}
+
+function limpiarCriterios(form,url,listado){
+	$(form)[0].reset();
+	listar(url,listado);
+}
+

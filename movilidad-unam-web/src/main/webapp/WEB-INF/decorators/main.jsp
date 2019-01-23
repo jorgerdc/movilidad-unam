@@ -133,10 +133,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<!-- Main Footer -->
 			<footer class="main-footer">
 				<!-- To the right -->
-				<div class="pull-right hidden-xs">Anything you want</div>
+				<div class="pull-right hidden-xs">Cristian Jovany Vargas Flores</div>
 				<!-- Default to the left -->
-				<strong>Copyright &copy; 2016 <a href="#">Company</a>.
-				</strong> All rights reserved.
+				<strong>SISTEMA INTEGRAL APLICADO A LA MEJORA DE LA MOVILIDAD EN CIUDAD UNIVERSITARIA.
+				</strong>
 			</footer>
 	
 	
