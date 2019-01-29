@@ -11,7 +11,14 @@ public interface UsuarioService {
 
 	/**
 	 * Servicio para obtener a los usuarios registrados
+	 * @param usuario
 	 * @return
 	 */
 	List<Usuario> listadoUsuarios(Usuario usuario);
+
+	/**
+	 * Servicio para guardar un usuario
+	 * @param usuario
+	 */
+	void guardarUsuario(Usuario usuario);
 }

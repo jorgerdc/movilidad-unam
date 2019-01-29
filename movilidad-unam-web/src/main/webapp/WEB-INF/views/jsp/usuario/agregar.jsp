@@ -6,22 +6,22 @@
 	<div class="row">
 		<div class="form-group col-md-6">
 			<label for="nombre">Nombre</label> 
-			<input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
+			<input type="text" name="usuNombre" class="form-control" id="usuNombre" placeholder="Nombre">
 		</div>
 		<div class="form-group col-md-6">
 			<label for="ap_paterno">Apellido paterno</label> 
-			<input type="text"name="apPaterno" class="form-control" id="apPaterno" placeholder="Apellido paterno">
+			<input type="text"name="usuPrimerApellido" class="form-control" id="usuPrimerApellido" placeholder="Apellido paterno">
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="form-group col-md-6">
 			<label for="ap_materno">Apellido materno</label> 
-			<input type="text" name="apMaterno" class="form-control" id="apMaterno" placeholder="Apellido materno">
+			<input type="text" name="usuSegundoApellido" class="form-control" id="usuSegundoApellido" placeholder="Apellido materno">
 		</div>
 		<div class="form-group col-md-6">
 			<label for="correo">Correo electrónico</label> 
-			<input type="text" name="correo" class="form-control" id="correo" placeholder="Correo electrónico">
+			<input type="text" name="usuCorreo" class="form-control" id="usuCorreo" placeholder="Correo electrónico">
 		</div>
 	</div>
 </form>
