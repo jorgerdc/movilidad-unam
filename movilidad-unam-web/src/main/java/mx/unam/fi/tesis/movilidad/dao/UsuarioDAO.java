@@ -11,8 +11,14 @@ public interface UsuarioDAO {
 
 	/**
 	 * Se obtienen a los usuarios registrados.
+	 * @param usuario
 	 * @return
 	 */
 	List<Usuario> getListado(Usuario usuario);
 
+	/**
+	 * Función para guardar al usuario
+	 * @param usuario
+	 */
+	void guardarUsuario(Usuario usuario);
 }

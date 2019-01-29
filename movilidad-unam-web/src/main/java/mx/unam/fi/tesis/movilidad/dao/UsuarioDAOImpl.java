@@ -20,6 +20,9 @@ public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
 	private static final String get_listado_usuario_sql =
 		"SELECT usuario_id,usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo FROM usuario";
 
+	private static final String insert_usuario_sql =
+		"INSERT INTO usuario(usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo,usu_contrasena) VALUES(?,?,?,?,?)";
+
 	private static final String get_busqueda_usuario_sql =
 		"SELECT usuario_id,usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo FROM usuario where ";
 
@@ -97,6 +100,16 @@ public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
 			return usuario;
 		}
 
+	}
+
+	@Override
+	public void guardarUsuario(Usuario usuario) {
+		int regActualizados =
+			getJdbcTemplate().update(insert_usuario_sql, usuario.getUsuNombre(),
+				usuario.getUsuPrimerApellido(), usuario.getUsuSegundoApellido(),
+				usuario.getUsuCorreo(), usuario.getUsuContrasena());
+
+		checkRowUpdated(1, regActualizados);
 	}
 
 }

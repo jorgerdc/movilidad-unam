@@ -24,4 +24,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return listado;
 	}
 
+	@Override
+	public void guardarUsuario(Usuario usuario) {
+		usuarioDao.guardarUsuario(usuario);
+
+	}
+
 }

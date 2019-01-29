@@ -11,6 +11,10 @@ $(document).ready(function(){
 	});
 	
 	$("#criterios-usuario").hide();
+	
+	$("#modalAgregarUsuario").on("hide.bs.modal",function(){
+    	$("#modalAgregarUsuario #modalEnviar").off("click");
+    });
 });
 
 function filtrarUsuarios(){

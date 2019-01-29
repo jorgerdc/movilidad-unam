@@ -10,5 +10,6 @@ $( document ).ready(function() {
 
 function guardarUsuario(){
 	var form = $("#formAgregarUsuario");
-	var datos = form.serialize();
+	var datos = getFormData(form);
+	guardar("/RestUsuario/guardar",datos,"#modalAgregarUsuario","/usuario/listar","#usuario-listado");
 }
