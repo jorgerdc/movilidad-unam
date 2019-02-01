@@ -34,9 +34,6 @@ dependencies {
 	compile 'org.codehaus.jackson:jackson-jaxrs:1.9.13'
 	
 
-	
-	
-
 	compileOnly 'jstl:jstl:1.2'
 	runtime 'org.sitemesh:sitemesh:3.0.1'
 	compile 'org.slf4j:slf4j-api:1.7.25'
