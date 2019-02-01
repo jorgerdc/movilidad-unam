@@ -11,14 +11,14 @@ public interface UsuarioDAO {
 
 	/**
 	 * Se obtienen a los usuarios registrados.
-	 * @param usuario
+	 * @param usuario Contiene filtros de búsqueda.
 	 * @return
 	 */
 	List<Usuario> getListado(Usuario usuario);
 
 	/**
 	 * Función para guardar al usuario
-	 * @param usuario
+	 * @param usuario Información del usuario a guardar.
 	 */
 	void guardarUsuario(Usuario usuario);
 }

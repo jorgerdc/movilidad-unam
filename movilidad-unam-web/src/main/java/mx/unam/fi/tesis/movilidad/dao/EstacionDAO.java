@@ -17,7 +17,7 @@ public interface EstacionDAO {
 
 	/**
 	 * Función para guardar una estación.
-	 * @param estacion
+	 * @param estacion Información de la estación a guardar.
 	 */
 	void guardarEstacion(Estacion estacion);
 

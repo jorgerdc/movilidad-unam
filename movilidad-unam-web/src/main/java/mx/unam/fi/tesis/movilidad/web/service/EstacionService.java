@@ -17,7 +17,7 @@ public interface EstacionService {
 
 	/**
 	 * Servicio para guardar una estacion
-	 * @param estacion
+	 * @param estacion Información de la estación introducida en el formulario.
 	 */
 	void guardarEstacion(Estacion estacion);
 }

@@ -11,14 +11,14 @@ public interface UsuarioService {
 
 	/**
 	 * Servicio para obtener a los usuarios registrados
-	 * @param usuario
+	 * @param usuario Cuando se trata de una busqueda, contiene la información a buscar.
 	 * @return
 	 */
 	List<Usuario> listadoUsuarios(Usuario usuario);
 
 	/**
 	 * Servicio para guardar un usuario
-	 * @param usuario
+	 * @param usuario Contiene la información del formulario.
 	 */
 	void guardarUsuario(Usuario usuario);
 }
