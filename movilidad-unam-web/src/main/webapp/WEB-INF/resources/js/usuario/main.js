@@ -22,3 +22,7 @@ function filtrarUsuarios(){
 	var datos = getFormData(form);
 	listar("/usuario/listar","#usuario-listado",datos);
 }
+
+function editarUsuario(usuarioId){
+	cargarModal("/usuario/editar/"+usuarioId,"#modalAgregarUsuario");
+}
