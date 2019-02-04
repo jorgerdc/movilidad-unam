@@ -21,4 +21,11 @@ public interface UsuarioService {
 	 * @param usuario Contiene la información del formulario.
 	 */
 	void guardarUsuario(Usuario usuario);
+
+	/**
+	 * Servicio que obtiene la información de un usuario.
+	 * @param id identificador del usuario.
+	 * @return
+	 */
+	Usuario getUsuario(int id);
 }

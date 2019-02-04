@@ -21,4 +21,11 @@ public interface UsuarioDAO {
 	 * @param usuario Información del usuario a guardar.
 	 */
 	void guardarUsuario(Usuario usuario);
+
+	/**
+	 * Función que obtiene la información de un usuario.
+	 * @param id identificador del usuario
+	 * @return
+	 */
+	Usuario getUsuario(int id);
 }
