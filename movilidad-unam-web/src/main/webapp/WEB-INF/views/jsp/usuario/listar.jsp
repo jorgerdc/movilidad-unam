@@ -17,12 +17,10 @@
 				<c:forEach var="usuario" items="${usuarios}">
 					<tr>
 						<td class="centrar-texto">
-							<button type="button" class="btn btn-primary btn-sm margin-right-5" 
-							onclick="editarUsuario(${usuario.usuarioId})">
+							<button type="button" class="btn btn-primary btn-sm margin-right-5" onclick="editarUsuario(${usuario.usuarioId})">
 								<span class="fa fa-pencil"></span>
 							</button>
-							<button type="button"
-								class="btn btn-warning btn-sm margin-right-5">
+							<button type="button" class="btn btn-warning btn-sm margin-right-5">
 								<span class="fa fa-ban"></span>
 							</button>
 						</td>
