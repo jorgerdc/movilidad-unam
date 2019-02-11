@@ -17,16 +17,17 @@ import mx.unam.fi.tesis.movilidad.web.model.Usuario;
  */
 @Repository("usuarioDAO")
 public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
-	private static final String get_listado_usuario_sql = "SELECT usuario_id,";
+	private static final String get_listado_usuario_sql =
+		"SELECT usuario_id,usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo FROM usuario";
 
-	private static final String insert_usuario_sql = "INSERT INTO usuario(";
+	private static final String insert_usuario_sql =
+		"INSERT INTO usuario(usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo,usu_contrasena) VALUES(?,?,?,?,?)";
 
-	private static final String get_busqueda_usuario_sql = "SELECT usuario_id,";
-
-	private static final String get_usuario_sql = "SELECT usuario_id,";
+	private static final String get_busqueda_usuario_sql =
+		"SELECT usuario_id,usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo FROM usuario where ";
 
 	private static final String update_usuario_sql =
-		"UPDATE usuario SET usu_nombre=?, usu_primer_apellido=?,usu_segundo_apellido=?,usu_correo=?";
+		"UPDATE usuario SET usu_nombre=?, usu_primer_apellido=?,usu_segundo_apellido=?,usu_correo=? where usuario_id=?";
 
 	private static final String queryNombre = " usu_nombre like :usuNombre ";
 
@@ -40,20 +41,7 @@ public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
 
 	private static final String queryAnd = " and ";
 
-	private static final String queryFrom = "FROM usuario";
-
-	private static final String camposUsuario =
-		"usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo ";
-
-	private static final String campoContrasena = "usu_contrasena";
-
-	private static final String valuesInsert = " VALUES(?,?,?,?,?)";
-
-	private static final String condicionUsuarioId = " usuario_id = ?";
-
-	private static final String orderUsuarioId = " ORDER BY usuario_id ASC";
-
-	private static final String queryWhere = " WHERE";
+	private static final String condicionUsuarioId = "usuario_id=?";
 
 	@Override
 	public List<Usuario> getListado(Usuario usuario) {
@@ -87,8 +75,7 @@ public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
 
 		size = condiciones.size();
 		if (size > 0) {
-			sb = new StringBuilder(
-				get_busqueda_usuario_sql + camposUsuario + queryFrom + queryWhere);
+			sb = new StringBuilder(get_busqueda_usuario_sql);
 			for (int i = 0; i < size; i++) {
 				sb.append(condiciones.get(i));
 				if (i < size - 1) {
@@ -98,8 +85,7 @@ public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
 			usuarioList = this.namedParameterJdbcTemplate.query(sb.toString(), params,
 				new UsuarioRowMapper());
 		} else {
-			sb = new StringBuilder(
-				get_listado_usuario_sql + camposUsuario + queryFrom + orderUsuarioId);
+			sb = new StringBuilder(get_listado_usuario_sql);
 			usuarioList =
 				this.namedParameterJdbcTemplate.query(sb.toString(), new UsuarioRowMapper());
 		}
@@ -126,14 +112,13 @@ public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
 		int regActualizados;
 		String query;
 		if (usuario.getUsuarioId() != null) {
-			query = update_usuario_sql + queryWhere + condicionUsuarioId;
+			query = update_usuario_sql;
 			regActualizados = getJdbcTemplate().update(query, usuario.getUsuNombre(),
 				usuario.getUsuPrimerApellido(), usuario.getUsuSegundoApellido(),
 				usuario.getUsuCorreo(), usuario.getUsuarioId());
 
 		} else {
-			query = insert_usuario_sql + camposUsuario + "," + campoContrasena + ")"
-				+ valuesInsert;
+			query = insert_usuario_sql;
 			regActualizados = getJdbcTemplate().update(query, usuario.getUsuNombre(),
 				usuario.getUsuPrimerApellido(), usuario.getUsuSegundoApellido(),
 				usuario.getUsuCorreo(), usuario.getUsuContrasena());
@@ -143,8 +128,7 @@ public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
 
 	@Override
 	public Usuario getUsuario(int id) {
-		String query =
-			get_usuario_sql + camposUsuario + queryFrom + queryWhere + condicionUsuarioId;
+		String query = get_busqueda_usuario_sql + condicionUsuarioId;
 		Usuario usuario = getJdbcTemplate().queryForObject(query, new Object[] { id },
 			new UsuarioRowMapper());
 		return usuario;
