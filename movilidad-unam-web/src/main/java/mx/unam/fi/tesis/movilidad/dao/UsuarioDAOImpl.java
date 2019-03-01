@@ -18,16 +18,20 @@ import mx.unam.fi.tesis.movilidad.web.model.Usuario;
 @Repository("usuarioDAO")
 public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
 	private static final String get_listado_usuario_sql =
-		"SELECT usuario_id,usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo FROM usuario";
+		"SELECT usuario_id,usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo"
+			+ " FROM usuario";
 
 	private static final String insert_usuario_sql =
-		"INSERT INTO usuario(usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo,usu_contrasena) VALUES(?,?,?,?,?)";
+		"INSERT INTO usuario(usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo,"
+			+ "usu_contrasena) VALUES(?,?,?,?,?)";
 
 	private static final String get_busqueda_usuario_sql =
-		"SELECT usuario_id,usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo FROM usuario where ";
+		"SELECT usuario_id,usu_nombre,usu_primer_apellido,usu_segundo_apellido,usu_correo "
+			+ "FROM usuario where ";
 
 	private static final String update_usuario_sql =
-		"UPDATE usuario SET usu_nombre=?, usu_primer_apellido=?,usu_segundo_apellido=?,usu_correo=? where usuario_id=?";
+		"UPDATE usuario SET usu_nombre=?, usu_primer_apellido=?,usu_segundo_apellido=?,"
+			+ "usu_correo=? where usuario_id=?";
 
 	private static final String queryNombre = " usu_nombre like :usuNombre ";
 
