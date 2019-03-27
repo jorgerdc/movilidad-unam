@@ -3,8 +3,18 @@
  */
  var drawingManager;
  var map;
+ var coordenadas;
 $(document).ready(function(){
 	initMapPuma();
+	
+	$("#modalAgregarRuta #modalEnviar").on('click',function(){
+		var nombre = $("#rutaNombre").val();
+		var coords = getCoordinates(coordenadas);
+		var datos = {"rutaNombre":nombre,"geo":coords};
+		guardar("/RestRuta/guardar",datos,"#modalAgregarRuta","/ruta/listar","#ruta-listado");
+	});
+
+	
 });
 
 function initMapPuma() {
@@ -28,4 +38,9 @@ function initMapPuma() {
 			    }
 			  });
 			  drawingManager.setMap(map);
+			  
+	  google.maps.event.addListener(drawingManager, 'polylinecomplete', function (polyline) {
+		    var coordinates = (polyline.getPath().getArray());
+		    coordenadas = coordinates;
+		});
 }

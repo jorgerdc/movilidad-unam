@@ -95,3 +95,12 @@ function limpiarCriterios(form,url,listado){
 	listar(url,listado);
 }
 
+function getCoordinates(coord){
+	var coordenadasRuta = [];
+	for (var i = 0; i < coord.length; i++) {
+		coordenadasRuta.push(coord[i].lat());
+		coordenadasRuta.push(coord[i].lng());
+	}
+	return coordenadasRuta;
+}
+
