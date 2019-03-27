@@ -14,13 +14,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class RutaController {
 	private static final Logger log = LoggerFactory.getLogger(RutaController.class);
 
+	private static final String vista_ruta_agregar = "ruta/agregar";
+	private static final String vista_ruta_listar = "ruta/listar";
+
 	/**
 	 * Método que permite agregar una ruta(linea) del pumabús.
 	 * @return
 	 */
 	@RequestMapping(value = "agregar", method = RequestMethod.GET)
 	public static String agregar() {
-		return "ruta/agregar";
+		return vista_ruta_agregar;
 	}
 
 	/**
@@ -29,6 +32,6 @@ public class RutaController {
 	 */
 	@RequestMapping(value = "listar", method = RequestMethod.GET)
 	public static String listar() {
-		return "ruta/listar";
+		return vista_ruta_listar;
 	}
 }

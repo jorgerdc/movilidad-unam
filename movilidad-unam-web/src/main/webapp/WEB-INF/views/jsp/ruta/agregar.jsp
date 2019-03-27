@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="form-group col-md-12">
 			<label for="nombre">Nombre</label> 
-			<input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
+			<input type="text" name="rutaNombre" class="form-control" id="rutaNombre" placeholder="Nombre">
 		</div>
 	</div>
 	<div id="map"></div>
