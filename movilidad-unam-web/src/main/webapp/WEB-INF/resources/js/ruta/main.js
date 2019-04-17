@@ -2,10 +2,10 @@
  * 
  */
 $(document).ready(function(){
-	cambiarPestanaMenu("#linkRutas");
-	listar("/ruta/listar","#rutas-listado");
+  cambiarPestanaMenu("#linkRutas");
+  listar("/ruta/listar","#rutas-listado");
 
-	$("#registrarRutas").on("click",function(){
-		cargarModal("/ruta/agregar","#modalAgregarRuta");
-	});
+  $("#registrarRutas").on("click",function(){
+    cargarModal("/ruta/agregar","#modalAgregarRuta");
+  });
 });

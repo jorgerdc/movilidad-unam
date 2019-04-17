@@ -11,56 +11,51 @@ import org.postgis.Point;
  */
 public class Ruta implements Serializable {
 
-	private static final long serialVersionUID = 2518978574179493260L;
+  private static final long serialVersionUID = 2518978574179493260L;
+  private Long rutaId;
+  private String rutaNombre;
+  private String geometria;
+  @JsonIgnore
+  private LineString geo;
 
-	private Long rutaId;
+  public Long getRutaId() {
+    return rutaId;
+  }
 
-	private String rutaNombre;
+  public void setRutaId(Long ruta_id) {
+    this.rutaId = ruta_id;
+  }
 
-	private String geometria;
+  public String getRutaNombre() {
+    return rutaNombre;
+  }
 
-	@JsonIgnore
-	private LineString geo;
+  public void setRutaNombre(String ruta_nombre) {
+    this.rutaNombre = ruta_nombre;
+  }
 
-	public Long getRutaId() {
-		return rutaId;
-	}
+  public Point[] getGeo() {
+    Point[] puntos = geo.getPoints();
+    return puntos;
+  }
 
-	public void setRutaId(Long ruta_id) {
-		this.rutaId = ruta_id;
-	}
+  public void setGeo(double[] coordenadas) {
+    Point[] puntos = new Point[coordenadas.length - 1];
+    int indice = 0;
+    for (int i = 0; i < coordenadas.length; i++) {
+      if ((i % 2) == 0) {
+        puntos[indice] = new Point(coordenadas[i], coordenadas[i + 1]);
+        indice++;
+      }
+      geo = new LineString(puntos);
+    }
+  }
 
-	public String getRutaNombre() {
-		return rutaNombre;
-	}
+  public String getGeometria() {
+    return geometria;
+  }
 
-	public void setRutaNombre(String ruta_nombre) {
-		this.rutaNombre = ruta_nombre;
-	}
-
-	public Point[] getGeo() {
-		Point[] puntos = geo.getPoints();
-		return puntos;
-	}
-
-	public void setGeo(double[] coordenadas) {
-		Point[] puntos = new Point[coordenadas.length - 1];
-		int indice = 0;
-		for (int i = 0; i < coordenadas.length; i++) {
-			if ((i % 2) == 0) {
-				puntos[indice] = new Point(coordenadas[i], coordenadas[i + 1]);
-				indice++;
-			}
-
-			geo = new LineString(puntos);
-		}
-	}
-
-	public String getGeometria() {
-		return geometria;
-	}
-
-	public void setGeometria(String geometria) {
-		this.geometria = geometria;
-	}
+  public void setGeometria(String geometria) {
+    this.geometria = geometria;
+  }
 }

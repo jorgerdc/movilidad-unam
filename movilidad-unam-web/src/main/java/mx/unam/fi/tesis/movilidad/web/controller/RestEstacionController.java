@@ -16,25 +16,21 @@ import mx.unam.fi.tesis.movilidad.web.service.EstacionService;
 @RestController
 @RequestMapping("/RestEstacion/")
 public class RestEstacionController extends GenericController {
-	private static final Logger log =
-		LoggerFactory.getLogger(RestEstacionController.class);
-	@Resource
-	private EstacionService estacionService;
+  private static final Logger log = LoggerFactory.getLogger(RestEstacionController.class);
+  @Resource
+  private EstacionService estacionService;
 
-	/**
-	 * Método que guarda la estación.
-	 * @param estacion objeto de tipo estacion.
-	 * @return
-	 */
-	@RequestMapping(value = "guardar", method = RequestMethod.POST)
-	public Mensaje guardar(@RequestBody Estacion estacion) {
-
-		estacionService.guardarEstacion(estacion);
-		Mensaje respuesta;
-		respuesta = generarMensaje("true", "Correcto!",
-			"La estación se ha guardado correctamente.", "success");
-
-		return respuesta;
-
-	}
+  /**
+   * Método que guarda la estación.
+   * @param estacion objeto de tipo estacion.
+   * @return
+   */
+  @RequestMapping(value = "guardar", method = RequestMethod.POST)
+  public Mensaje guardar(@RequestBody Estacion estacion) {
+    estacionService.guardarEstacion(estacion);
+    Mensaje respuesta;
+    respuesta = generarMensaje("true", "Correcto!",
+      "La estación se ha guardado correctamente.", "success");
+    return respuesta;
+  }
 }

@@ -12,25 +12,23 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
  */
 public abstract class GenericJdbcDAO extends JdbcDaoSupport {
 
-	protected NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+  protected NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-	@Resource(name = "dataSource")
-	private void setDS(DataSource ds) {
-		this.setDataSource(ds);
-		this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(ds);
-	}
+  @Resource(name = "dataSource")
+  private void setDS(DataSource ds) {
+    this.setDataSource(ds);
+    this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(ds);
+  }
 
-	/**
-	 * Función que verifica si se realizó correctamente la interaccion con la BD.
-	 * @param expected
-	 * @param actual
-	 */
-	protected final void checkRowUpdated(int expected, int actual) {
-
-		if (expected != actual) {
-			throw new IncorrectResultSizeDataAccessException(expected, actual);
-		}
-		return;
-
-	}
+  /**
+   * Función que verifica si se realizó correctamente la interaccion con la BD.
+   * @param expected
+   * @param actual
+   */
+  protected final void checkRowUpdated(int expected, int actual) {
+    if (expected != actual) {
+      throw new IncorrectResultSizeDataAccessException(expected, actual);
+    }
+    return;
+  }
 }

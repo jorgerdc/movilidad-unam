@@ -7,10 +7,10 @@ import mx.unam.fi.tesis.movilidad.web.model.Ruta;
  */
 public interface RutaDAO {
 
-	/**
-	 * Función para guardar una ruta.
-	 * @param ruta Información de la ruta a guardar.
-	 */
-	void guardarRuta(Ruta ruta);
+  /**
+   * Función para guardar una ruta.
+   * @param ruta Información de la ruta a guardar.
+   */
+  void guardarRuta(Ruta ruta);
 
 }

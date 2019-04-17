@@ -9,16 +9,16 @@ import mx.unam.fi.tesis.movilidad.web.model.Estacion;
  */
 public interface EstacionDAO {
 
-	/**
-	 * Se obtienen datos de las estaciones registradas.
-	 * @return
-	 */
-	List<Estacion> getListado();
+  /**
+   * Se obtienen datos de las estaciones registradas.
+   * @return
+   */
+  List<Estacion> getListado();
 
-	/**
-	 * Función para guardar una estación.
-	 * @param estacion Información de la estación a guardar.
-	 */
-	void guardarEstacion(Estacion estacion);
+  /**
+   * Función para guardar una estación.
+   * @param estacion Información de la estación a guardar.
+   */
+  void guardarEstacion(Estacion estacion);
 
 }
