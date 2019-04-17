@@ -20,33 +20,32 @@ import mx.unam.fi.tesis.movilidad.web.service.EstacionService;
 @Controller
 @RequestMapping("/estacion/")
 public class EstacionController {
-	private static final Logger log = LoggerFactory.getLogger(EstacionController.class);
-	private static final String vista_estacion_agregar = "estacion/agregar";
-	private static final String vista_estacion_listar = "estacion/listar";
+  private static final Logger log = LoggerFactory.getLogger(EstacionController.class);
+  private static final String vista_estacion_agregar = "estacion/agregar";
+  private static final String vista_estacion_listar = "estacion/listar";
 
-	@Resource
-	private EstacionService estacionService;
+  @Resource
+  private EstacionService estacionService;
 
-	/**
-	 * Método que permite agregar una estación.
-	 * @return
-	 */
-	@RequestMapping(value = "agregar", method = RequestMethod.GET)
-	public String agregar(ModelMap map) {
-		return vista_estacion_agregar;
-	}
+  /**
+   * Método que permite agregar una estación.
+   * @return
+   */
+  @RequestMapping(value = "agregar", method = RequestMethod.GET)
+  public String agregar(ModelMap map) {
+    return vista_estacion_agregar;
+  }
 
-	/**
-	 * Método que obtiene el listado de las estaciones.
-	 * @return
-	 */
-	@RequestMapping(value = "listar", method = RequestMethod.GET)
-	public String listar(ModelMap map) {
-		List<Estacion> estaciones = estacionService.listadoEstaciones();
-		int totalEstaciones = estaciones.size();
-		map.addAttribute("totalEstaciones", totalEstaciones);
-		map.addAttribute("estaciones", estaciones);
-
-		return vista_estacion_listar;
-	}
+  /**
+   * Método que obtiene el listado de las estaciones.
+   * @return
+   */
+  @RequestMapping(value = "listar", method = RequestMethod.GET)
+  public String listar(ModelMap map) {
+    List<Estacion> estaciones = estacionService.listadoEstaciones();
+    int totalEstaciones = estaciones.size();
+    map.addAttribute("totalEstaciones", totalEstaciones);
+    map.addAttribute("estaciones", estaciones);
+    return vista_estacion_listar;
+  }
 }

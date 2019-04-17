@@ -12,26 +12,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value = "/ruta/")
 public class RutaController {
-	private static final Logger log = LoggerFactory.getLogger(RutaController.class);
+  private static final Logger log = LoggerFactory.getLogger(RutaController.class);
+  private static final String vista_ruta_agregar = "ruta/agregar";
+  private static final String vista_ruta_listar = "ruta/listar";
 
-	private static final String vista_ruta_agregar = "ruta/agregar";
-	private static final String vista_ruta_listar = "ruta/listar";
+  /**
+   * Método que permite agregar una ruta(linea) del pumabús.
+   * @return
+   */
+  @RequestMapping(value = "agregar", method = RequestMethod.GET)
+  public static String agregar() {
+    return vista_ruta_agregar;
+  }
 
-	/**
-	 * Método que permite agregar una ruta(linea) del pumabús.
-	 * @return
-	 */
-	@RequestMapping(value = "agregar", method = RequestMethod.GET)
-	public static String agregar() {
-		return vista_ruta_agregar;
-	}
-
-	/**
-	 * Método que obtiene el listado de las rutas para los pumabús.
-	 * @return
-	 */
-	@RequestMapping(value = "listar", method = RequestMethod.GET)
-	public static String listar() {
-		return vista_ruta_listar;
-	}
+  /**
+   * Método que obtiene el listado de las rutas para los pumabús.
+   * @return
+   */
+  @RequestMapping(value = "listar", method = RequestMethod.GET)
+  public static String listar() {
+    return vista_ruta_listar;
+  }
 }

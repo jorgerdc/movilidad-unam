@@ -2,10 +2,10 @@
  * 
  */
 $(document).ready(function(){
-	cambiarPestanaMenu("#linkEstacionamientos");
-	listar("/estacionamiento/listar","#estacionamiento-listado");
+  cambiarPestanaMenu("#linkEstacionamientos");
+  listar("/estacionamiento/listar","#estacionamiento-listado");
 	
-	$("#registrarEstacionamiento").on("click",function(){
-		cargarModal("/estacionamiento/agregar","#modalAgregarEstacionamiento");
-	});
+  $("#registrarEstacionamiento").on("click",function(){
+    cargarModal("/estacionamiento/agregar","#modalAgregarEstacionamiento");
+  });
 });

@@ -7,10 +7,9 @@ import mx.unam.fi.tesis.movilidad.web.model.Ruta;
  */
 public interface RutaService {
 
-	/**
-	 * Servicio para guardar una ruta
-	 * @param ruta Contiene la información del formulario.
-	 */
-	void guardarRuta(Ruta ruta);
-
+  /**
+   * Servicio para guardar una ruta
+   * @param ruta Contiene la información del formulario.
+   */
+  void guardarRuta(Ruta ruta);
 }

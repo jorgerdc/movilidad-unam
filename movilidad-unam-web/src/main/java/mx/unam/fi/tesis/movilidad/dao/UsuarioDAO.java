@@ -9,23 +9,23 @@ import mx.unam.fi.tesis.movilidad.web.model.Usuario;
  */
 public interface UsuarioDAO {
 
-	/**
-	 * Se obtienen a los usuarios registrados.
-	 * @param usuario Contiene filtros de búsqueda.
-	 * @return
-	 */
-	List<Usuario> getListado(Usuario usuario);
+  /**
+   * Se obtienen a los usuarios registrados.
+   * @param usuario Contiene filtros de búsqueda.
+   * @return
+   */
+  List<Usuario> getListado(Usuario usuario);
 
-	/**
-	 * Función para guardar al usuario
-	 * @param usuario Información del usuario a guardar.
-	 */
-	void guardarUsuario(Usuario usuario);
+  /**
+   * Función para guardar al usuario
+   * @param usuario Información del usuario a guardar.
+   */
+  void guardarUsuario(Usuario usuario);
 
-	/**
-	 * Función que obtiene la información de un usuario.
-	 * @param id identificador del usuario
-	 * @return
-	 */
-	Usuario getUsuario(int id);
+  /**
+   * Función que obtiene la información de un usuario.
+   * @param id identificador del usuario
+   * @return
+   */
+  Usuario getUsuario(int id);
 }

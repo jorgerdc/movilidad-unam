@@ -17,20 +17,18 @@ import mx.unam.fi.tesis.movilidad.web.model.Estacion;
  */
 @Service("estacionService")
 public class EstacionServiceImpl implements EstacionService {
-	private static final Logger log = LoggerFactory.getLogger(EstacionController.class);
-	@Resource
-	private EstacionDAO estacionDao;
+  private static final Logger log = LoggerFactory.getLogger(EstacionController.class);
+  @Resource
+  private EstacionDAO estacionDao;
 
-	@Override
-	public List<Estacion> listadoEstaciones() {
-		List<Estacion> listado = estacionDao.getListado();
-		return listado;
-	}
+  @Override
+  public List<Estacion> listadoEstaciones() {
+    List<Estacion> listado = estacionDao.getListado();
+    return listado;
+  }
 
-	@Override
-	public void guardarEstacion(Estacion estacion) {
-		estacionDao.guardarEstacion(estacion);
-
-	}
-
+  @Override
+  public void guardarEstacion(Estacion estacion) {
+    estacionDao.guardarEstacion(estacion);
+  }
 }

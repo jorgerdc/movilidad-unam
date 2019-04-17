@@ -3,10 +3,10 @@
  */
 
 $(document).ready(function(){
-	cambiarPestanaMenu("#linkPumabus");
-	listar("/pumabus/listar","#pumabus-listado");
+  cambiarPestanaMenu("#linkPumabus");
+  listar("/pumabus/listar","#pumabus-listado");
 	
-	$("#registrarPumabus").on("click",function(){
-		cargarModal("/pumabus/agregar","#modalAgregarPumabus");
-	});
+  $("#registrarPumabus").on("click",function(){
+    cargarModal("/pumabus/agregar","#modalAgregarPumabus");
+  });
 });

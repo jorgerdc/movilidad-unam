@@ -18,33 +18,32 @@ import mx.unam.fi.tesis.movilidad.web.model.Estacion;
 @Repository("estacionDAO")
 public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
 
-	private static final Logger log = LoggerFactory.getLogger(EstacionDAOImpl.class);
-	private static final String get_listado_estacion_sql =
-		"SELECT nombre, estacion_id FROM estacion";
-	private static final String insert_estacion_sql =
-		"INSERT INTO estacion (nombre,geo) VALUES(?,ST_GeomFromText(?))";
+  private static final Logger log = LoggerFactory.getLogger(EstacionDAOImpl.class);
+  private static final String get_listado_estacion_sql =
+    "SELECT nombre, estacion_id FROM estacion";
+  private static final String insert_estacion_sql =
+    "INSERT INTO estacion (nombre,geo) VALUES(?,ST_GeomFromText(?))";
 
-	@Override
-	public List<Estacion> getListado() {
-		List<Estacion> listEstaciones =
-			getJdbcTemplate().query(get_listado_estacion_sql, new RowMapper<Estacion>() {
-				@Override
-				public Estacion mapRow(ResultSet rs, int rowNum) throws SQLException {
-					Estacion estacion = new Estacion();
-					estacion.setNombre(rs.getString(1));
-					estacion.setEstacionId(rs.getLong(2));
-					return estacion;
-				}
-			});
-		return listEstaciones;
-	}
+  @Override
+  public List<Estacion> getListado() {
+    List<Estacion> listEstaciones =
+      getJdbcTemplate().query(get_listado_estacion_sql, new RowMapper<Estacion>() {
+        @Override
+        public Estacion mapRow(ResultSet rs, int rowNum) throws SQLException {
+          Estacion estacion = new Estacion();
+          estacion.setNombre(rs.getString(1));
+          estacion.setEstacionId(rs.getLong(2));
+          return estacion;
+        }
+      });
+    return listEstaciones;
+  }
 
-	@Override
-	public void guardarEstacion(Estacion estacion) {
-		int regActualizados = getJdbcTemplate().update(insert_estacion_sql,
-			estacion.getNombre(), estacion.getGeo().toString());
-
-		checkRowUpdated(1, regActualizados);
-	}
+  @Override
+  public void guardarEstacion(Estacion estacion) {
+    int regActualizados = getJdbcTemplate().update(insert_estacion_sql,
+      estacion.getNombre(), estacion.getGeo().toString());
+    checkRowUpdated(1, regActualizados);
+  }
 
 }

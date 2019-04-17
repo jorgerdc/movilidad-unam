@@ -13,13 +13,11 @@ import mx.unam.fi.tesis.movilidad.web.model.Ruta;
 @Service("rutaService")
 public class RutaServiceImpl implements RutaService {
 
-	@Resource
-	private RutaDAO rutaDao;
+  @Resource
+  private RutaDAO rutaDao;
 
-	@Override
-	public void guardarRuta(Ruta ruta) {
-		rutaDao.guardarRuta(ruta);
-
-	}
-
+  @Override
+  public void guardarRuta(Ruta ruta) {
+    rutaDao.guardarRuta(ruta);
+  }
 }

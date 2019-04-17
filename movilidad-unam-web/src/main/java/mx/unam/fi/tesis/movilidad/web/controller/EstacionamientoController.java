@@ -11,22 +11,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/estacionamiento/")
 public class EstacionamientoController {
 
-	/**
-	 * Método que permite agregar un estacionamiento.
-	 * @return
-	 */
-	@RequestMapping(value = "agregar", method = RequestMethod.GET)
-	public static String agregar() {
-		return "estacionamiento/agregar";
-	}
+  /**
+   * Método que permite agregar un estacionamiento.
+   * @return
+   */
+  @RequestMapping(value = "agregar", method = RequestMethod.GET)
+  public static String agregar() {
+    return "estacionamiento/agregar";
+  }
 
-	/**
-	 * Método que obtiene el listado de los estacionamientos.
-	 * @return
-	 */
-	@RequestMapping(value = "listar", method = RequestMethod.GET)
-	public static String listar() {
-		return "estacionamiento/listar";
-	}
-
+  /**
+   * Método que obtiene el listado de los estacionamientos.
+   * @return
+   */
+  @RequestMapping(value = "listar", method = RequestMethod.GET)
+  public static String listar() {
+    return "estacionamiento/listar";
+  }
 }

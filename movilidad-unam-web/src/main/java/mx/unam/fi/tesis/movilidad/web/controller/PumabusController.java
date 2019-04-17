@@ -11,22 +11,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/pumabus/")
 public class PumabusController {
 
-	/**
-	 * Método que permite agregar un autobús del pumabus.
-	 * @return
-	 */
-	@RequestMapping(value = "agregar", method = RequestMethod.GET)
-	public static String agregar() {
-		return "pumabus/agregar";
-	}
+  /**
+   * Método que permite agregar un autobús del pumabus.
+   * @return
+   */
+  @RequestMapping(value = "agregar", method = RequestMethod.GET)
+  public static String agregar() {
+    return "pumabus/agregar";
+  }
 
-	/**
-	 * Método que obtiene el listado de los autobuses para el pumabus.
-	 * @return
-	 */
-	@RequestMapping(value = "listar", method = RequestMethod.GET)
-	public static String listar() {
-		return "pumabus/listar";
-	}
-
+  /**
+   * Método que obtiene el listado de los autobuses para el pumabus.
+   * @return
+   */
+  @RequestMapping(value = "listar", method = RequestMethod.GET)
+  public static String listar() {
+    return "pumabus/listar";
+  }
 }

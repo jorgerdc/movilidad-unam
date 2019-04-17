@@ -9,15 +9,15 @@ import mx.unam.fi.tesis.movilidad.web.model.Estacion;
  */
 public interface EstacionService {
 
-	/**
-	 * Servicio para obtener los datos de las estaciones registradas.
-	 * @return
-	 */
-	public List<Estacion> listadoEstaciones();
+  /**
+   * Servicio para obtener los datos de las estaciones registradas.
+   * @return
+   */
+  public List<Estacion> listadoEstaciones();
 
-	/**
-	 * Servicio para guardar una estacion
-	 * @param estacion Información de la estación introducida en el formulario.
-	 */
-	void guardarEstacion(Estacion estacion);
+  /**
+   * Servicio para guardar una estacion
+   * @param estacion Información de la estación introducida en el formulario.
+   */
+  void guardarEstacion(Estacion estacion);
 }
