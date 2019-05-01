@@ -92,8 +92,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MENÚ</li>
 						<!-- Optionally, you can add icons to the links -->
-            <li class="active" id="linkEstacion"><a
-              href="<c:url value='/'/>"><i class="fa fa-map-marker"></i><span>Estaciones</span></a></li>
+            <li class="active" id="linkEstacion">
+            <a href="<c:url value='/'/>"><i class="fa fa-map-marker"></i>
+              <span>Estaciones</span></a></li>
 	
             <li id="linkPumabus"><a href="<c:url value='/pumabus'/>"><i
               class="fa fa-bus"></i> <span>Pumabus</span></a></li>

@@ -11,8 +11,10 @@ $( document ).ready(function() {
 	
   $("#modalAgregarEstacion #modalEnviar").on('click',function(){
     var nombre = $("#nombreEstacion").val();
-    var datos = {"nombre":nombre,"x": marker.getPosition().lat(), "y":marker.getPosition().lng()};
-    guardar("/RestEstacion/guardar",datos,"#modalAgregarEstacion","/estacion/listar","#estacion-listado");
+    var datos = {"nombre":nombre,"x": marker.getPosition().lat(), 
+    		     "y":marker.getPosition().lng()};
+    guardar("/RestEstacion/guardar",datos,"#modalAgregarEstacion","/estacion/listar",
+    		"#estacion-listado");
   });	
 });
 
