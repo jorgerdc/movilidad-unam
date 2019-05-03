@@ -18,27 +18,54 @@ public class Ruta implements Serializable {
   @JsonIgnore
   private LineString geo;
 
+  /**
+   * get para el atributo ruta_id
+   * @return
+   */
   public Long getRutaId() {
     return rutaId;
   }
 
+  /**
+   * set para el atriburo ruta_id
+   * @param ruta_id
+   */
   public void setRutaId(Long ruta_id) {
     this.rutaId = ruta_id;
   }
 
+  /**
+   * get para el atributo ruta_nombre
+   * @return
+   */
   public String getRutaNombre() {
     return rutaNombre;
   }
 
+  /**
+   * set para el atributo ruta_nombre
+   * @param ruta_nombre
+   */
   public void setRutaNombre(String ruta_nombre) {
     this.rutaNombre = ruta_nombre;
   }
 
+  /**
+   * get para la geometría
+   * @return
+   */
   public Point[] getGeo() {
+    if (geo == null) {
+      return null;
+    }
     Point[] puntos = geo.getPoints();
     return puntos;
   }
 
+  /**
+   * set para la geometría
+   * @param coordenadas
+   */
   public void setGeo(double[] coordenadas) {
     Point[] puntos = new Point[coordenadas.length - 1];
     int indice = 0;
@@ -51,10 +78,18 @@ public class Ruta implements Serializable {
     }
   }
 
+  /**
+   * get para la cadena de la geometría
+   * @return
+   */
   public String getGeometria() {
     return geometria;
   }
 
+  /**
+   * set para le cadena de la geometría
+   * @param geometria
+   */
   public void setGeometria(String geometria) {
     this.geometria = geometria;
   }

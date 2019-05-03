@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import mx.unam.fi.tesis.movilidad.dao.EstacionDAO;
 import mx.unam.fi.tesis.movilidad.web.controller.EstacionController;
 import mx.unam.fi.tesis.movilidad.web.model.Estacion;
+import mx.unam.fi.tesis.movilidad.web.model.Ruta;
 
 /**
  * Declaracion de las funciones para el servicio de las estaciones.
@@ -30,5 +31,10 @@ public class EstacionServiceImpl implements EstacionService {
   @Override
   public void guardarEstacion(Estacion estacion) {
     estacionDao.guardarEstacion(estacion);
+  }
+
+  @Override
+  public List<Ruta> verificarRuta(Estacion estacion) {
+    return estacionDao.verificarRuta(estacion);
   }
 }

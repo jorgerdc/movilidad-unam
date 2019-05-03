@@ -20,6 +20,7 @@
       <input type="text" name="longitud" class="form-control" id="longitud" placeholder="Longitud">
     </div>
   </div>
+  <div id="checkRutas" ></div>
 </form>
 
 <div id="map"></div>
