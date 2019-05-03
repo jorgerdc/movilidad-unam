@@ -14,6 +14,7 @@ public class Estacion implements Serializable {
   private String nombre;
   private double x;
   private double y;
+  private int[] estacionRuta;
 
   /**
    * Get para el atributo estacion_id
@@ -85,6 +86,23 @@ public class Estacion implements Serializable {
    */
   public Point getGeo() {
     return new Point(this.x, this.y);
+  }
+
+  /**
+   * Arreglo de rutas asociadas a la estación.
+   * @param estacionRuta
+   */
+  public void setEstacionRuta(int[] estacionRuta) {
+    this.estacionRuta = new int[estacionRuta.length];
+    System.arraycopy(estacionRuta, 0, this.estacionRuta, 0, estacionRuta.length);
+  }
+
+  /**
+   * get para las rutas asociadas a una estación.
+   * @return
+   */
+  public int[] getEstacionRuta() {
+    return this.estacionRuta;
   }
 
 }

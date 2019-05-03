@@ -3,6 +3,7 @@ package mx.unam.fi.tesis.movilidad.dao;
 import java.util.List;
 
 import mx.unam.fi.tesis.movilidad.web.model.Estacion;
+import mx.unam.fi.tesis.movilidad.web.model.Ruta;
 
 /**
  * Declaración de las funciones para las estaciones
@@ -20,5 +21,12 @@ public interface EstacionDAO {
    * @param estacion Información de la estación a guardar.
    */
   void guardarEstacion(Estacion estacion);
+
+  /**
+   * Función que verifica si hay rutas cercas de la estación a guardar.
+   * @param estacion coordenadas de la estación
+   * @return Lista de rutas cercanas
+   */
+  List<Ruta> verificarRuta(Estacion estacion);
 
 }
