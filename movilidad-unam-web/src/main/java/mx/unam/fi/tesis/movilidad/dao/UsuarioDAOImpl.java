@@ -47,6 +47,9 @@ public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
 
   private static final String condicionUsuarioId = "usuario_id=?";
 
+  private static final String rest_login_usuario_sql =
+    "SELECT * FROM usuario WHERE usu_correo = ? and usu_contrasena = ?";
+
   @Override
   public List<Usuario> getListado(Usuario usuario) {
 
@@ -133,6 +136,13 @@ public class UsuarioDAOImpl extends GenericJdbcDAO implements UsuarioDAO {
     String query = get_busqueda_usuario_sql + condicionUsuarioId;
     Usuario usuario = getJdbcTemplate().queryForObject(query, new Object[] { id },
       new UsuarioRowMapper());
+    return usuario;
+  }
+
+  @Override
+  public Usuario restGetUsuario(String correo, String contrasena) {
+    Usuario usuario = getJdbcTemplate().queryForObject(rest_login_usuario_sql,
+      new Object[] { correo, contrasena }, new UsuarioRowMapper());
     return usuario;
   }
 

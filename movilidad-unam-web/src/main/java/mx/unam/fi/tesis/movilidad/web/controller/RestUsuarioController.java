@@ -33,4 +33,19 @@ public class RestUsuarioController extends GenericController {
       "El usuario se ha guardado correctamente.", "success");
     return respuesta;
   }
+
+  /**
+   * Función para obtener los datos de un usuario que se quiere auntentificar desde la
+   * aplicación móvil
+   * @param usuario
+   * @return
+   */
+  @CrossOrigin(origins = "*")
+  @RequestMapping(value = "getUsuario", method = RequestMethod.POST)
+  public Usuario restGetUsuario(@RequestBody Usuario usuario) {
+    Usuario loginUsuario =
+      usuarioService.restGetUsuario(usuario.getUsuCorreo(), usuario.getUsuContrasena());
+    return loginUsuario;
+  }
+
 }

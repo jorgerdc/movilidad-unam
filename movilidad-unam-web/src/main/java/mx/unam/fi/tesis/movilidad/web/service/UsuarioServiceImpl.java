@@ -33,4 +33,9 @@ public class UsuarioServiceImpl implements UsuarioService {
   public Usuario getUsuario(int id) {
     return usuarioDao.getUsuario(id);
   }
+
+  @Override
+  public Usuario restGetUsuario(String correo, String contrasena) {
+    return usuarioDao.restGetUsuario(correo, contrasena);
+  }
 }
