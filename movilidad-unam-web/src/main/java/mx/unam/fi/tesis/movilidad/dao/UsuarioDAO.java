@@ -28,4 +28,13 @@ public interface UsuarioDAO {
    * @return
    */
   Usuario getUsuario(int id);
+
+  /**
+   * Función para obtener los datos de un usuario
+   * @param correo
+   * @param contrasena
+   * @return
+   */
+  Usuario restGetUsuario(String correo, String contrasena);
+
 }

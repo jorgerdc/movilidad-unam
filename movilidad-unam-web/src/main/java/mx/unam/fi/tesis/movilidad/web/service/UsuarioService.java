@@ -28,4 +28,12 @@ public interface UsuarioService {
    * @return
    */
   Usuario getUsuario(int id);
+
+  /**
+   * Servicio para obtener los datos de un usuario.
+   * @param correo
+   * @param contrasena
+   * @return
+   */
+  Usuario restGetUsuario(String correo, String contrasena);
 }
