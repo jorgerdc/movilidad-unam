@@ -37,4 +37,9 @@ public class EstacionServiceImpl implements EstacionService {
   public List<Ruta> verificarRuta(Estacion estacion) {
     return estacionDao.verificarRuta(estacion);
   }
+
+  @Override
+  public List<Estacion> getEstacionesRuta(Ruta ruta) {
+    return estacionDao.getEstacionesRuta(ruta);
+  }
 }

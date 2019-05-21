@@ -36,6 +36,9 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
       + "as interseccion from ruta) q1 where interseccion = true";
   private static final String insert_estacion_ruta_sql =
     "INSERT INTO estacion_ruta(estacion_id,ruta_id) VALUES(?,?)";
+  private static final String get_estaciones_ruta_sql =
+    "SELECT e.estacion_id,nombre,ST_X(geo),ST_Y(geo) FROM estacion e LEFT JOIN "
+      + "estacion_ruta er on er.estacion_id = e.estacion_id where er.ruta_id = ?";
 
   @Override
   public List<Estacion> getListado() {
@@ -74,8 +77,7 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
 
   @Override
   public List<Ruta> verificarRuta(Estacion estacion) {
-    String verifica_sql =
-      verifica_estacion_ruta.replace("?", estacion.getGeo().toString());
+    String verifica_sql = verifica_estacion_ruta.replace("?", estacion.getGeo());
 
     List<Ruta> listRuta = getJdbcTemplate().query(verifica_sql, new RowMapper<Ruta>() {
       @Override
@@ -108,6 +110,29 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
           return rutaId.length;
         }
       });
+  }
+
+  @Override
+  public List<Estacion> getEstacionesRuta(Ruta ruta) {
+
+    String estacionesRuta =
+      get_estaciones_ruta_sql.replace("?", Long.toString(ruta.getRutaId()));
+    List<Estacion> listEstaciones =
+      getJdbcTemplate().query(estacionesRuta, new RowMapper<Estacion>() {
+        @Override
+        public Estacion mapRow(ResultSet rs, int rowNum) throws SQLException {
+          Estacion estacion = new Estacion();
+          double[] coords = new double[2];
+          estacion.setEstacionId(rs.getLong(1));
+          estacion.setNombre(rs.getString(2));
+          coords[0] = rs.getDouble("st_x");
+          coords[1] = rs.getDouble("st_y");
+          estacion.setX(coords[0]);
+          estacion.setY(coords[1]);
+          return estacion;
+        }
+      });
+    return listEstaciones;
   }
 
 }

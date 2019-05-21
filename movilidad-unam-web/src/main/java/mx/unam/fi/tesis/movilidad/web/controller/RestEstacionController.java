@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -47,4 +48,17 @@ public class RestEstacionController extends GenericController {
     List<Ruta> ruta = estacionService.verificarRuta(estacion);
     return ruta;
   }
+
+  /**
+   * Método que obtiene las estaciones de una ruta.
+   * @param ruta
+   * @return
+   */
+  @CrossOrigin(origins = "*")
+  @RequestMapping(value = "getEstacionRuta", method = RequestMethod.POST)
+  public List<Estacion> restGetUsuario(@RequestBody Ruta ruta) {
+    List<Estacion> estacionesRuta = estacionService.getEstacionesRuta(ruta);
+    return estacionesRuta;
+  }
+
 }

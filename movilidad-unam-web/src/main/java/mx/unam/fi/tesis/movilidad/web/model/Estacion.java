@@ -84,8 +84,9 @@ public class Estacion implements Serializable {
    * Genera la geometria punto con los valores x,y
    * @return
    */
-  public Point getGeo() {
-    return new Point(this.x, this.y);
+  public String getGeo() {
+    Point p = new Point(this.x, this.y);
+    return p.toString();
   }
 
   /**
