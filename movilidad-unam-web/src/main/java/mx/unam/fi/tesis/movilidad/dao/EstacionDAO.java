@@ -29,4 +29,10 @@ public interface EstacionDAO {
    */
   List<Ruta> verificarRuta(Estacion estacion);
 
+  /**
+   * Función que obtiene las estaciones pertenecientes a una ruta.
+   * @param ruta
+   * @return
+   */
+  List<Estacion> getEstacionesRuta(Ruta ruta);
 }

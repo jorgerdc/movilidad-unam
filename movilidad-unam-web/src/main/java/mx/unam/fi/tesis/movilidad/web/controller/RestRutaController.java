@@ -1,7 +1,11 @@
 package mx.unam.fi.tesis.movilidad.web.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,4 +35,27 @@ public class RestRutaController extends GenericController {
       "La ruta se ha guardado correctamente.", "success");
     return respuesta;
   }
+
+  /**
+   * Método que obtiene las rutas que seran mostradas en la aplicación
+   * @return listado de rutas
+   */
+  @CrossOrigin(origins = "*")
+  @RequestMapping(value = "getListadoRutas", method = RequestMethod.POST)
+  public List<Ruta> getListadoRutas() {
+    return rutaService.getListadoRutas();
+  }
+
+  /**
+   * Método que obtiene la geometría de una ruta para la aplicación
+   * @return geometría
+   */
+  @CrossOrigin(origins = "*")
+  @RequestMapping(value = "getRuta", method = RequestMethod.POST)
+  public ArrayList<String> getRuta(@RequestBody Ruta ruta) {
+    ArrayList<String> rutaGeo = new ArrayList<String>();
+    rutaGeo.add(rutaService.getRuta(ruta.getRutaId()));
+    return rutaGeo;
+  }
+
 }

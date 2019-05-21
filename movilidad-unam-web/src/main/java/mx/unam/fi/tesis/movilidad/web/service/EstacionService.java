@@ -28,4 +28,11 @@ public interface EstacionService {
    * @return
    */
   List<Ruta> verificarRuta(Estacion estacion);
+
+  /**
+   * Servicio para obtener las estaciones de una ruta.
+   * @param ruta
+   * @return
+   */
+  List<Estacion> getEstacionesRuta(Ruta ruta);
 }

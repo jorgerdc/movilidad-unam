@@ -1,5 +1,7 @@
 package mx.unam.fi.tesis.movilidad.web.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -19,5 +21,15 @@ public class RutaServiceImpl implements RutaService {
   @Override
   public void guardarRuta(Ruta ruta) {
     rutaDao.guardarRuta(ruta);
+  }
+
+  @Override
+  public List<Ruta> getListadoRutas() {
+    return rutaDao.getListadoRutas();
+  }
+
+  @Override
+  public String getRuta(Long rutaId) {
+    return rutaDao.getRuta(rutaId);
   }
 }
