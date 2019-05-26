@@ -32,12 +32,12 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
     "INSERT INTO estacion (nombre,geo) VALUES(?,ST_GeomFromText(?))";
   private static final String verifica_estacion_ruta =
     "SELECT q1.ruta_id,q1.ruta_nombre FROM (SELECT ruta_id, ruta_nombre, "
-      + "st_intersects(geo,ST_Buffer(ST_GeomFromText('?'),0.002)) "
+      + "st_intersects(geo,ST_Buffer(ST_GeomFromText(?),0.002)) "
       + "as interseccion from ruta) q1 where interseccion = true";
   private static final String insert_estacion_ruta_sql =
     "INSERT INTO estacion_ruta(estacion_id,ruta_id) VALUES(?,?)";
   private static final String get_estaciones_ruta_sql =
-    "SELECT e.estacion_id,nombre,ST_X(geo),ST_Y(geo) FROM estacion e LEFT JOIN "
+    "SELECT e.estacion_id,nombre,ST_X(geo),ST_Y(geo) FROM estacion e JOIN "
       + "estacion_ruta er on er.estacion_id = e.estacion_id where er.ruta_id = ?";
 
   @Override
@@ -77,17 +77,18 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
 
   @Override
   public List<Ruta> verificarRuta(Estacion estacion) {
-    String verifica_sql = verifica_estacion_ruta.replace("?", estacion.getGeo());
 
-    List<Ruta> listRuta = getJdbcTemplate().query(verifica_sql, new RowMapper<Ruta>() {
-      @Override
-      public Ruta mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Ruta ruta = new Ruta();
-        ruta.setRutaId(rs.getLong(1));
-        ruta.setRutaNombre(rs.getString(2));
-        return ruta;
-      }
-    });
+    List<Ruta> listRuta = getJdbcTemplate().query(verifica_estacion_ruta,
+      new Object[] { estacion.getGeo() }, new RowMapper<Ruta>() {
+        @Override
+        public Ruta mapRow(ResultSet rs, int rowNum) throws SQLException {
+          Ruta ruta = new Ruta();
+          ruta.setRutaId(rs.getLong(1));
+          ruta.setRutaNombre(rs.getString(2));
+          return ruta;
+        }
+      });
+
     return listRuta;
   }
 
@@ -115,10 +116,8 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
   @Override
   public List<Estacion> getEstacionesRuta(Ruta ruta) {
 
-    String estacionesRuta =
-      get_estaciones_ruta_sql.replace("?", Long.toString(ruta.getRutaId()));
-    List<Estacion> listEstaciones =
-      getJdbcTemplate().query(estacionesRuta, new RowMapper<Estacion>() {
+    List<Estacion> listEstaciones = getJdbcTemplate().query(get_estaciones_ruta_sql,
+      new Object[] { ruta.getRutaId() }, new RowMapper<Estacion>() {
         @Override
         public Estacion mapRow(ResultSet rs, int rowNum) throws SQLException {
           Estacion estacion = new Estacion();
