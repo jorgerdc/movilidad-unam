@@ -35,4 +35,11 @@ public interface EstacionService {
    * @return
    */
   List<Estacion> getEstacionesRuta(Ruta ruta);
+
+  /**
+   * Servicio para obtener las estaciones cercanas a una ubicación.
+   * @param estacion
+   * @return
+   */
+  List<Estacion> getEstacionesCercanas(Estacion estacion);
 }

@@ -39,6 +39,14 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
   private static final String get_estaciones_ruta_sql =
     "SELECT e.estacion_id,nombre,ST_X(geo),ST_Y(geo) FROM estacion e JOIN "
       + "estacion_ruta er on er.estacion_id = e.estacion_id where er.ruta_id = ?";
+  private static final String get_estaciones_cercanas =
+    "SELECT q1.nombre, ST_X(q1.geo), ST_Y(q1.geo),array_agg(r.ruta_nombre) as rutas "
+      + "FROM (SELECT estacion_id, nombre,geo, "
+      + "st_intersects(geo,ST_Buffer(ST_GeomFromText(?),0.002)) "
+      + "as interseccion from estacion) q1 "
+      + "JOIN estacion_ruta es on q1.estacion_id = es.estacion_id "
+      + "JOIN ruta r on r.ruta_id = es.ruta_id "
+      + "WHERE interseccion = true GROUP BY q1.nombre, ST_X(q1.geo), ST_Y(q1.geo)";
 
   @Override
   public List<Estacion> getListado() {
@@ -124,6 +132,26 @@ public class EstacionDAOImpl extends GenericJdbcDAO implements EstacionDAO {
           double[] coords = new double[2];
           estacion.setEstacionId(rs.getLong(1));
           estacion.setNombre(rs.getString(2));
+          coords[0] = rs.getDouble("st_x");
+          coords[1] = rs.getDouble("st_y");
+          estacion.setX(coords[0]);
+          estacion.setY(coords[1]);
+          return estacion;
+        }
+      });
+    return listEstaciones;
+  }
+
+  @Override
+  public List<Estacion> getEstacionesCercanas(Estacion estacion) {
+    List<Estacion> listEstaciones = getJdbcTemplate().query(get_estaciones_cercanas,
+      new Object[] { estacion.getGeo() }, new RowMapper<Estacion>() {
+        @Override
+        public Estacion mapRow(ResultSet rs, int rowNum) throws SQLException {
+          Estacion estacion = new Estacion();
+          double[] coords = new double[2];
+          String nombreRutas = rs.getString(1) + "-" + rs.getString("rutas");
+          estacion.setNombre(nombreRutas.replaceAll("[\"|{|}]", ""));
           coords[0] = rs.getDouble("st_x");
           coords[1] = rs.getDouble("st_y");
           estacion.setX(coords[0]);

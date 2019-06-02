@@ -35,4 +35,11 @@ public interface EstacionDAO {
    * @return
    */
   List<Estacion> getEstacionesRuta(Ruta ruta);
+
+  /**
+   * Función que obtiene las estaciones cercanas a una ubicación
+   * @param estacion
+   * @return
+   */
+  List<Estacion> getEstacionesCercanas(Estacion estacion);
 }

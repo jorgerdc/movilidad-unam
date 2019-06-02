@@ -61,4 +61,16 @@ public class RestEstacionController extends GenericController {
     return estacionesRuta;
   }
 
+  /**
+   * Método que obtiene las estaciones cercanas dada una ubicación
+   * @param estacion
+   * @return
+   */
+  @CrossOrigin(origins = "*")
+  @RequestMapping(value = "getEstacionesCercanas", method = RequestMethod.POST)
+  public List<Estacion> getEstacionesCercanas(@RequestBody Estacion estacion) {
+    List<Estacion> estaciones = estacionService.getEstacionesCercanas(estacion);
+    return estaciones;
+  }
+
 }
