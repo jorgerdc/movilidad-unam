@@ -42,4 +42,9 @@ public class EstacionServiceImpl implements EstacionService {
   public List<Estacion> getEstacionesRuta(Ruta ruta) {
     return estacionDao.getEstacionesRuta(ruta);
   }
+
+  @Override
+  public List<Estacion> getEstacionesCercanas(Estacion estacion) {
+    return estacionDao.getEstacionesCercanas(estacion);
+  }
 }
